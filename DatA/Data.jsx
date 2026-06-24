@@ -12,6 +12,7 @@ import { MdOutlineCleaningServices } from "react-icons/md";
   {
     id: "engine-performance",
     title: "Engine & Performance",
+    
     catagory: "Car Repair",
     image:"https://media.istockphoto.com/id/1350239751/photo/car-diagnostic-service-and-electronics-repair.jpg?s=612x612&w=0&k=20&c=6xSgzMp9KJJ8lN0hC1UcuqXuuZMLNFCgCkcju-Q0BTU=",
       desc: "Unlock peak engine efficiency with precision diagnostics, tuning and performance upgrades.",
@@ -288,4 +289,711 @@ icon: <GrUpgrade/>,
       { name: "Periodic Inspection",img:"https://t4.ftcdn.net/jpg/10/01/72/49/240_F_1001724901_KbNeF6qYmSbESLaTDUFP5wo4ligjSQ7w.jpg", price: 800 }
     ]
   }
+];
+
+
+export const mechanicsAPI = [
+  {
+    id: 1,
+    type:"Car",
+    name: "Michael Anderson",
+    role: "Senior Engine Specialist",
+    image:
+      "https://t4.ftcdn.net/jpg/07/37/77/91/240_F_737779195_7tb6dNCdaAZYKJUdfdEpkmbuzgXb8d0t.jpg",
+    experience: "12+ Years",
+    completedJobs: 2450,
+    rating: 4.9,
+    reviews: 1280,
+    speciality: [
+      "Engine Diagnostics",
+      "ECU Tuning",
+      "Performance Upgrade",
+    ],
+  },
+
+ {
+  id: 2,
+  type: "Car",
+  name: "David Wilson",
+  role: "Brake System Specialist",
+  image: "https://t3.ftcdn.net/jpg/20/38/06/82/240_F_2038068290_NSCRpNWEH9ygqqOvuwaZbwsZAUTceTW4.jpg",
+  experience: "10+ Years",
+  completedJobs: 2100,
+  rating: 4.8,
+  reviews: 1120,
+  speciality: [
+    "ABS Diagnostics",
+    "Brake Repair",
+    "Disc Replacement",
+  ],
+},
+{
+  id: 3,
+  type: "Car",
+  name: "Robert Johnson",
+  role: "Suspension Expert",
+  image: "https://t3.ftcdn.net/jpg/19/27/96/72/240_F_1927967246_KfEVzffuT4pP8tLqO3rKOdgiVNBrVKsr.jpg",
+  experience: "11+ Years",
+  completedJobs: 2300,
+  rating: 4.9,
+  reviews: 1360,
+  speciality: [
+    "Wheel Alignment",
+    "Suspension Tuning",
+    "Shock Absorber Repair",
+  ],
+},
+{
+  id: 4,
+  type: "Car",
+  name: "James Martinez",
+  role: "Electrical Technician",
+  image: "https://t4.ftcdn.net/jpg/18/59/32/75/240_F_1859327543_Co7IrwMx9Rk7xtmlVt4ZfvouQsJIZaBG.jpg",
+  experience: "9+ Years",
+  completedJobs: 1850,
+  rating: 4.7,
+  reviews: 980,
+  speciality: [
+    "ECU Programming",
+    "Battery Systems",
+    "Wiring Diagnostics",
+  ],
+},
+{
+  id: 5,
+  type: "Bike",
+  name: "Daniel Brown",
+  role: "Motorcycle Engine Expert",
+  image: "https://t3.ftcdn.net/jpg/20/24/19/18/240_F_2024191888_MPXsktZArQwnvLOQlSVd7NxifttjkOFJ.jpg",
+  experience: "8+ Years",
+  completedJobs: 1700,
+  rating: 4.8,
+  reviews: 890,
+  speciality: [
+    "Engine Rebuild",
+    "Fuel Injection",
+    "Performance Tuning",
+  ],
+},
+{
+  id: 6,
+  type: "Bike",
+  name: "Ryan Taylor",
+  role: "Bike Suspension Specialist",
+  image: "https://t3.ftcdn.net/jpg/06/39/22/74/240_F_639227497_VLsEzj7XJhrEYBMp9bPNYGgnEpuhYKR0.jpg",
+  experience: "7+ Years",
+  completedJobs: 1500,
+  rating: 4.7,
+  reviews: 820,
+  speciality: [
+    "Front Fork Service",
+    "Rear Shock Repair",
+    "Handling Setup",
+  ],
+},
+{
+  id: 7,
+  type: "Bike",
+  name: "Andrew Clark",
+  role: "Transmission Specialist",
+  image: "https://t4.ftcdn.net/jpg/06/51/89/69/240_F_651896964_qVg23mt1oXMlqbmqICp1IExAQK48Uyo9.jpg",
+  experience: "9+ Years",
+  completedJobs: 2050,
+  rating: 4.9,
+  reviews: 1240,
+  speciality: [
+    "Gearbox Repair",
+    "Chain Drive Setup",
+    "Clutch Service",
+  ],
+},
+{
+  id: 8,
+  type: "Car",
+  name: "Christopher Lee",
+  role: "Performance Engineer",
+  image: "https://t4.ftcdn.net/jpg/12/26/18/27/240_F_1226182758_LVMnTpoun1YQWMCxmigjhKXGCJ8ZoIZI.jpg",
+  experience: "15+ Years",
+  completedJobs: 3200,
+  rating: 5.0,
+  reviews: 1800,
+  speciality: [
+    "Turbo Setup",
+    "Dyno Tuning",
+    "Race Performance",
+  ],
+},
+{
+  id: 9,
+  type: "Bike",
+  name: "Kevin White",
+  role: "Custom Bike Builder",
+  image: "https://t3.ftcdn.net/jpg/11/18/68/70/240_F_1118687059_54IPe8uiPCOmFjGAMfLJ5ZkxKcmv0apD.jpg",
+  experience: "12+ Years",
+  completedJobs: 2400,
+  rating: 4.9,
+  reviews: 1420,
+  speciality: [
+    "Custom Fabrication",
+    "Body Kits",
+    "Exhaust Upgrades",
+  ],
+},
+{
+  id: 10,
+  type: "Car",
+  name: "Thomas Harris",
+  role: "AC & Cooling Specialist",
+  image: "https://t3.ftcdn.net/jpg/15/48/32/54/240_F_1548325432_c4lz48ftqKASHHETM5363Fr5g84G9rH9.jpg",
+  experience: "13+ Years",
+  completedJobs: 2800,
+  rating: 4.8,
+  reviews: 1560,
+  speciality: [
+    "AC Repair",
+    "Radiator Service",
+    "Cooling Diagnostics",
+  ],
+},
+{
+  id: 11,
+  type: "Bike",
+  name: "Jason Walker",
+  role: "Electrical & ECU Specialist",
+  image: "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg",
+  experience: "10+ Years",
+  completedJobs: 2200,
+  rating: 4.9,
+  reviews: 1310,
+  speciality: [
+    "ECU Mapping",
+    "Sensor Diagnostics",
+    "Electrical Repair",
+  ],
+},
+
+  {
+    id: 12,
+    type: "Bike",
+    name: "Ryan Mitchell",
+    role: "Senior Engine Specialist",
+    image: "https://t3.ftcdn.net/jpg/04/42/94/60/240_F_442946065_8BHf8jMXcTqYeW7Pt7ASmbnyYPmK8new.jpg",
+    experience: "12+ Years",
+    completedJobs: 2450,
+    rating: 4.9,
+    reviews: 1280,
+    speciality: [
+      "Engine Diagnostics",
+      "Engine Tuning",
+      "ECU Remapping",
+    ],
+  },
+
+  {
+    id: 13,
+    type: "Bike",
+    name: "Daniel Cooper",
+    role: "Brake System Expert",
+    image: "https://t4.ftcdn.net/jpg/17/73/06/97/240_F_1773069709_S9Vg3rhlfkiFYAMSsvDmac7w4dxDJqT3.jpg",
+    experience: "10+ Years",
+    completedJobs: 2100,
+    rating: 4.8,
+    reviews: 1040,
+    speciality: [
+      "Brake Pad Replacement",
+      "ABS Check",
+      "Brake Disc Service",
+    ],
+  },
+
+  {
+    id: 14,
+    type: "Bike",
+    name: "James Walker",
+    role: "Suspension Technician",
+    image: "https://t3.ftcdn.net/jpg/09/74/17/32/240_F_974173219_64DNCpYTQvipKDHgppfssQkWG68Mz2Pf.jpg",
+    experience: "11+ Years",
+    completedJobs: 1950,
+    rating: 4.9,
+    reviews: 980,
+    speciality: [
+      "Front Fork Service",
+      "Suspension Tuning",
+      "Rear Shock Repair",
+    ],
+  },
+
+  {
+    id: 15,
+    type: "Bike",
+    name: "David Scott",
+    role: "Electrical Specialist",
+    image: "https://t3.ftcdn.net/jpg/05/62/08/90/240_F_562089056_5WZANi3TxafULrqGmt1tvFlJWXuMs9Rv.jpg",
+    experience: "9+ Years",
+    completedJobs: 1750,
+    rating: 4.8,
+    reviews: 860,
+    speciality: [
+      "Battery Testing",
+      "Wiring Repair",
+      "Sensor Diagnostics",
+    ],
+  },
+
+  {
+    id: 16,
+    type: "Bike",
+    name: "Andrew Lewis",
+    role: "Transmission Engineer",
+    image: "https://t3.ftcdn.net/jpg/13/26/34/00/240_F_1326340089_yRfU3QLkzPYu2L6nu7UgVqtoAgTQ5mGI.jpg",
+    experience: "13+ Years",
+    completedJobs: 2600,
+    rating: 5.0,
+    reviews: 1430,
+    speciality: [
+      "Chain Replacement",
+      "Gear Box Service",
+      "Sprocket Replacement",
+    ],
+  },
+
+  {
+    id: 17,
+    type: "Bike",
+    name: "Kevin Martin",
+    role: "Tyre & Wheel Specialist",
+    image: "https://t3.ftcdn.net/jpg/01/99/28/66/240_F_199286665_8uovHdAFR7vZlfDnjgzWwq5qEpLgnX7m.jpg",
+    experience: "8+ Years",
+    completedJobs: 1620,
+    rating: 4.7,
+    reviews: 760,
+    speciality: [
+      "Wheel Alignment",
+      "Wheel Balancing",
+      "Tyre Replacement",
+    ],
+  },
+
+  {
+    id: 18,
+    type: "Bike",
+    name: "Christopher Lee",
+    role: "Modification Expert",
+    image: "https://t3.ftcdn.net/jpg/08/05/47/30/240_F_805473025_ar4WBK0RrmLYZ1rB8A7JwEOwkDD2LcqF.jpg",
+    experience: "15+ Years",
+    completedJobs: 3200,
+    rating: 5.0,
+    reviews: 1800,
+    speciality: [
+      "Exhaust Upgrade",
+      "LED Setup",
+      "Custom Body Kit",
+    ],
+  },
+
+  {
+    id: 19,
+    type: "Bike",
+    name: "Matthew Clark",
+    role: "Detailing Specialist",
+    image: "https://t3.ftcdn.net/jpg/01/80/19/54/240_F_180195440_lZxy5KleSTcP6UQm6fO4eRYhQJlqJdqu.jpg",
+    experience: "9+ Years",
+    completedJobs: 1900,
+    rating: 4.9,
+    reviews: 920,
+    speciality: [
+      "Ceramic Coating",
+      "Bike Washing",
+      "Engine Cleaning",
+    ],
+  },
+
+  {
+    id: 20,
+    type: "Bike",
+    name: "Robert Wilson",
+    role: "Maintenance Supervisor",
+    image: "https://t3.ftcdn.net/jpg/04/44/93/60/240_F_444936058_LBwo1q9xG4f2iF0zbWeWgUY2mJfAyD2g.jpg",
+    experience: "14+ Years",
+    completedJobs: 2850,
+    rating: 4.9,
+    reviews: 1560,
+    speciality: [
+      "Full Bike Service",
+      "Oil Change",
+      "Periodic Inspection",
+    ],
+  },
+];
+
+
+
+export const carPartsAPI = [
+ {
+  id: 1,
+  NameCatagory: "Engine-parts",
+  title: "Wholesale Price Kta19 Diesel Engine Parts 3088303 Motor Auto Cylinder Block for Cummins",
+  model: "KTA19",
+  image: "https://image.made-in-china.com/43f34j00GaDjeBHgCcbO/Wholesale-Price-Kta19-Diesel-Engine-Parts-3088303-Motor-Auto-Cylinder-Block-for-Cummins.webp",
+
+  type: "Engine Block",
+  company: "Cummins",
+  brand: "Cummins",
+
+  price: "US$2,650.00 - US$4,890.00",
+  customization: "Available",
+
+  material: "Iron",
+  technics: "Casting",
+
+  warranty: "12 Months",
+  afterSalesService: "Standard",
+
+  oeNumber: [
+    "3803717",
+    "4060393",
+    "3064223",
+    "3800717"
+  ],
+
+  displacement: "10.8L",
+
+  application: [
+    "Heavy Truck",
+    "Excavator",
+    "Generator"
+  ],
+
+  layout: "Vertical Inline 6-Cylinder",
+  coolingSystem: "Water-Cooled 4-Stroke",
+
+  specification: "301kg",
+
+  origin: "China",
+
+  moq: "1 PCS",
+
+  transportPackage: "Wooden Box",
+
+  trademark: "Komotashi",
+
+  productionCapacity: "100 PCS/Month",
+
+  packageSize: {
+    length: "113cm",
+    width: "65cm",
+    height: "69cm"
+  },
+
+  packageGrossWeight: "315kg",
+
+  leadTime: [
+    {
+      quantity: "1-2 Sets",
+      days: "15 Days"
+    },
+    {
+      quantity: "3-20 Sets",
+      days: "35 Days"
+    },
+    {
+      quantity: ">20 Sets",
+      days: "Negotiable"
+    }
+  ]
+},
+  {
+  id: 2,
+  NameCatagory: "Engine-parts",
+  title: "Factory Price New Cummins M11 Cylinder Block Diesel Engine Parts 10.8L Inline 6 OEM 3803717 4060393 for Heavy Truck Excavator Generator Motor",
+  model: "M11",
+  image: "https://image.made-in-china.com/43f34j00uEgSKsrIYeka/Factory-Price-New-Cummins-M11-Cylinder-Block-Diesel-Engine-Parts-10-8L-Inline-6-OEM-3803717-4060393-for-Heavy-Truck-Excavator-Generator-Motor.webp",
+
+  type: "Engine Block",
+  company: "Cummins",
+  brand: "Cummins",
+
+  price: "US$2,650.00 - US$4,890.00",
+  customization: "Available",
+
+  material: "Iron",
+  technics: "Casting",
+
+  warranty: "12 Months",
+  afterSalesService: "Standard",
+
+  oeNumber: [
+    "3803717",
+    "4060393",
+    "3064223",
+    "3800717"
+  ],
+
+  displacement: "10.8L",
+
+  application: [
+    "Heavy Truck",
+    "Excavator",
+    "Generator"
+  ],
+
+  layout: "Vertical Inline 6-Cylinder",
+  coolingSystem: "Water-Cooled 4-Stroke",
+
+  specification: "301kg",
+
+  origin: "China",
+
+  moq: "1 PCS",
+
+  transportPackage: "Wooden Box",
+
+  trademark: "Komotashi",
+
+  productionCapacity: "100 PCS/Month",
+
+  packageSize: {
+    length: "113cm",
+    width: "65cm",
+    height: "69cm"
+  },
+
+  packageGrossWeight: "315kg",
+
+  leadTime: [
+    {
+      quantity: "1-2 Sets",
+      days: "15 Days"
+    },
+    {
+      quantity: "3-20 Sets",
+      days: "35 Days"
+    },
+    {
+      quantity: ">20 Sets",
+      days: "Negotiable"
+    }
+  ]
+},
+  {
+  id: 3,
+  NameCatagory: "Engine-parts",
+  title: "Factory Price K19 Kta19 Diesel Engine Spare Parts Cylinder Head Assy 3068401 3072438 3081070 3640321 3646324 3646323 3811985 Cylinder Head for Cummins",
+  model: "3646324 3811985 3811988 3068401 3072438 3081070",
+  image: "https://image.made-in-china.com/43f34j00nbBvhNYklQcM/Factory-Price-K19-Kta19-Diesel-Engine-Spare-Parts-Cylinder-Head-Assy-3068401-3072438-3081070-3640321-3646324-3646323-3811985-Cylinder-Head-for-Cummins.webp",
+
+  type: "Cylinder Head ",
+  company: "Cummins",
+  brand: "Cummins",
+
+  price: "US$69.00-99.00",
+  customization: "Available",
+
+  material: "Iron",
+  technics: "Casting",
+
+  warranty: "12 Months",
+  afterSalesService: "Standard",
+
+  oeNumber: [
+    "3803717",
+    "4060393",
+    "3064223",
+    "3800717"
+  ],
+
+  displacement: "10.8L",
+
+  application: [
+    "Heavy Truck",
+    "Excavator",
+    "Generator"
+  ],
+
+  layout: "Vertical Inline 6-Cylinder",
+  coolingSystem: "Water-Cooled 4-Stroke",
+
+  specification: "301kg",
+
+  origin: "China",
+
+  moq: "1 PCS",
+
+  transportPackage: "Wooden Box",
+
+  trademark: "Komotashi",
+
+  productionCapacity: "100 PCS/Month",
+
+  packageSize: {
+    length: "113cm",
+    width: "65cm",
+    height: "69cm"
+  },
+
+  packageGrossWeight: "315kg",
+
+  leadTime: [
+    {
+      quantity: "1-2 Sets",
+      days: "15 Days"
+    },
+    {
+      quantity: "3-20 Sets",
+      days: "35 Days"
+    },
+    {
+      quantity: ">20 Sets",
+      days: "Negotiable"
+    }
+  ]
+},
+  {
+  id: 4,
+  NameCatagory: "Engine-parts",
+  title: "Best Price Engine Cylinder Head 51031006299 51031006410 51031006427 51031006468 for Man Engine",
+  model: "MC 07, MC 11, MC 13,51031006299 51031006410 510310",
+  image: "https://image.made-in-china.com/43f34j00hBTcemMECvrp/Best-Price-Engine-Cylinder-Head-51031006299-51031006410-51031006427-51031006468-for-Man-Engine.webp",
+
+  type: "Cylinder Head ",
+  company: "Cummins",
+  brand: "Cummins",
+
+  price: "US$1,100.00",
+  customization: "Available",
+
+  material: "Iron",
+  technics: "Casting",
+
+  warranty: "12 Months",
+  afterSalesService: "Standard",
+
+  oeNumber: [
+    "3803717",
+    "4060393",
+    "3064223",
+    "3800717"
+  ],
+
+  displacement: "10.8L",
+
+  application: [
+    "Heavy Truck",
+    "Excavator",
+    "Generator"
+  ],
+
+  layout: "Vertical Inline 6-Cylinder",
+  coolingSystem: "Water-Cooled 4-Stroke",
+
+  specification: "301kg",
+
+  origin: "China",
+
+  moq: "1 PCS",
+
+  transportPackage: "Wooden Box",
+
+  trademark: "Komotashi",
+
+  productionCapacity: "100 PCS/Month",
+
+  packageSize: {
+    length: "113cm",
+    width: "65cm",
+    height: "69cm"
+  },
+
+  packageGrossWeight: "315kg",
+
+  leadTime: [
+    {
+      quantity: "1-2 Sets",
+      days: "15 Days"
+    },
+    {
+      quantity: "3-20 Sets",
+      days: "35 Days"
+    },
+    {
+      quantity: ">20 Sets",
+      days: "Negotiable"
+    }
+  ]
+},
+  {
+  id: 5,
+  NameCatagory: "Engine-parts",
+  title: "Best Price Engine Cylinder Head 51031006299 51031006410 51031006427 51031006468 for Man Engine",
+  model: "MC 07, MC 11, MC 13,51031006299 51031006410 510310",
+  image: "https://image.made-in-china.com/43f34j00hBTcemMECvrp/Best-Price-Engine-Cylinder-Head-51031006299-51031006410-51031006427-51031006468-for-Man-Engine.webp",
+
+  type: "Cylinder Head ",
+  company: "Cummins",
+  brand: "Cummins",
+
+  price: "US$1,100.00",
+  customization: "Available",
+
+  material: "Iron",
+  technics: "Casting",
+
+  warranty: "12 Months",
+  afterSalesService: "Standard",
+
+  oeNumber: [
+    "3803717",
+    "4060393",
+    "3064223",
+    "3800717"
+  ],
+
+  displacement: "10.8L",
+
+  application: [
+    "Heavy Truck",
+    "Excavator",
+    "Generator"
+  ],
+
+  layout: "Vertical Inline 6-Cylinder",
+  coolingSystem: "Water-Cooled 4-Stroke",
+
+  specification: "301kg",
+
+  origin: "China",
+
+  moq: "1 PCS",
+
+  transportPackage: "Wooden Box",
+
+  trademark: "Komotashi",
+
+  productionCapacity: "100 PCS/Month",
+
+  packageSize: {
+    length: "113cm",
+    width: "65cm",
+    height: "69cm"
+  },
+
+  packageGrossWeight: "315kg",
+
+  leadTime: [
+    {
+      quantity: "1-2 Sets",
+      days: "15 Days"
+    },
+    {
+      quantity: "3-20 Sets",
+      days: "35 Days"
+    },
+    {
+      quantity: ">20 Sets",
+      days: "Negotiable"
+    }
+  ]
+},
+
+
 ];
