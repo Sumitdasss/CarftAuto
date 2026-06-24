@@ -1,82 +1,21 @@
-import {
-  FiArrowRight,
-  FiActivity,
-  FiShield,
-  FiWind,
-  FiCpu,
-  FiCheckCircle,
-} from "react-icons/fi";
 
-export const servicesData = {
-    car: [
-      {
-        id: 1,
-        icon: <FiActivity />,
-        title: "Engine Diagnostics",
-        desc: "ECU scanning, tuning and performance optimization.",
-        features: ["ECU Scan", "Dyno Test", "Error Fix"],
-      },
-      {
-        id: 2,
-        icon: <FiCpu />,
-        title: "Brake System",
-        desc: "High performance brake setup and calibration.",
-        features: ["ABS Check", "Pad Replace", "Fluid Service"],
-      },
-      {
-        id: 3,
-        icon: <FiWind />,
-        title: "AC System",
-        desc: "Cooling system repair and optimization.",
-        features: ["Gas Refill", "Leak Test", "Cooling Tune"],
-      },
-      {
-        id: 4,
-        icon: <FiShield />,
-        title: "Car Protection",
-        desc: "Paint protection and detailing service.",
-        features: ["Ceramic Coat", "PPF", "Detailing"],
-      },
-    ],
-    bike: [
-      {
-        id: 1,
-        icon: <FiActivity />,
-        title: "Bike Tuning",
-        desc: "Engine tuning for speed and performance.",
-        features: ["Race Map", "RPM Tune", "Power Boost"],
-      },
-      {
-        id: 2,
-        icon: <FiCpu />,
-        title: "Suspension",
-        desc: "Smooth ride suspension setup.",
-        features: ["Fork Oil", "Shock Setup", "Balance"],
-      },
-      {
-        id: 3,
-        icon: <FiWind />,
-        title: "Exhaust",
-        desc: "Performance exhaust upgrade.",
-        features: ["Full Pipe", "Air Flow", "Sound Tune"],
-      },
-      {
-        id: 4,
-        icon: <FiShield />,
-        title: "Bike Care",
-        desc: "Full bike protection service.",
-        features: ["Chain Clean", "Coating", "Wash"],
-      },
-    ],
-  };
-
-
+import { PiEngineBold } from "react-icons/pi";
+import { GiAndromedaChain, GiAutoRepair, GiCarWheel, GiSuspensionBridge } from "react-icons/gi";
+import { TbSteeringWheelFilled } from "react-icons/tb";
+import { FaWind } from "react-icons/fa";
+import { GiElectricalCrescent } from "react-icons/gi";
+import { FcDataProtection } from "react-icons/fc";
+import { Droplet } from "lucide-react";
+import { GrHostMaintenance, GrUpgrade } from "react-icons/gr";
+import { MdOutlineCleaningServices } from "react-icons/md";
   export const carServicesAPI = [
   {
     id: "engine-performance",
     title: "Engine & Performance",
     catagory: "Car Repair",
-    icon: "engine",
+    image:"https://media.istockphoto.com/id/1350239751/photo/car-diagnostic-service-and-electronics-repair.jpg?s=612x612&w=0&k=20&c=6xSgzMp9KJJ8lN0hC1UcuqXuuZMLNFCgCkcju-Q0BTU=",
+      desc: "Unlock peak engine efficiency with precision diagnostics, tuning and performance upgrades.",
+    icon: <PiEngineBold/>,
     services: [
       { name: "Engine Diagnostics", img:"https://media.istockphoto.com/id/1350239751/photo/car-diagnostic-service-and-electronics-repair.jpg?s=612x612&w=0&k=20&c=6xSgzMp9KJJ8lN0hC1UcuqXuuZMLNFCgCkcju-Q0BTU=", price: 1500 },
       { name: "Engine Tuning",img:"https://media.istockphoto.com/id/1367581969/photo/mechanic-using-laptop-during-car-engine-diagnostic.jpg?s=612x612&w=0&k=20&c=Qn8i9uNXzIxRMv74KTQDdpAR-J7zGyh9RT5xP5h4sLU=", price: 5000 },
@@ -92,7 +31,9 @@ export const servicesData = {
     id: "brake-system",
     title: "Brake System",
     catagory: "Car Repair",
-    icon: "brake",
+    image:"https://t3.ftcdn.net/jpg/03/08/32/76/240_F_308327638_ZrCnGQLLk8IT9Ck0gnWhjQdjDmdqxlrM.jpg",
+    desc:"Ensure confident stopping power through comprehensive brake inspection and repair.",
+    icon: <GiCarWheel/>,
     services: [
       { name: "Brake Pad Replacement", img:"https://t3.ftcdn.net/jpg/03/08/32/76/240_F_308327638_ZrCnGQLLk8IT9Ck0gnWhjQdjDmdqxlrM.jpg", price: 2500 },
       { name: "Brake Disc/Rotar Grinding", img:"https://t4.ftcdn.net/jpg/04/19/31/93/240_F_419319334_cxnAfwLPuhGtPx6dTB7TlBEsodhkzrkR.jpg", price: 2000 },
@@ -105,8 +46,10 @@ export const servicesData = {
   {
     id: "suspension-steering",
     title: "Suspension & Steering",
+        image:"https://t4.ftcdn.net/jpg/01/29/75/91/240_F_129759159_ziC7X6c2xPYohha3XHhtjDgAQfbmeGxU.jpg",
     catagory: "Car Repair",
-    icon: "suspension",
+    desc:"Experience smoother rides and sharper control with expert suspension solutions.",
+   icon: <TbSteeringWheelFilled/>,
     services: [
       { name: "Wheel Alignment", img:"https://t4.ftcdn.net/jpg/01/29/75/91/240_F_129759159_ziC7X6c2xPYohha3XHhtjDgAQfbmeGxU.jpg", price: 1200 },
       { name: "Wheel Balancing",img:"https://t3.ftcdn.net/jpg/19/02/78/96/240_F_1902789681_TfTes7KJHSvfVRTSUB0CA99ku1FULV53.jpg", price: 1000 },
@@ -119,8 +62,10 @@ export const servicesData = {
   {
     id: "ac-cooling",
     title: "AC & Cooling System",
+        image:"https://t3.ftcdn.net/jpg/20/04/63/78/240_F_2004637849_bK2ccaVMAoeUvmJqfOKeO3NZbhWvn6LR.jpg",
     catagory: "Car Repair",
-    icon: "ac",
+    desc:"Stay cool and protect your engine with advanced cooling system maintenance.",
+   icon: <FaWind/>,
     services: [
       { name: "AC Gas Refill",img:"https://t3.ftcdn.net/jpg/20/04/63/78/240_F_2004637849_bK2ccaVMAoeUvmJqfOKeO3NZbhWvn6LR.jpg", price: 2500 },
       { name: "AC Compressor Repair", img:"https://t4.ftcdn.net/jpg/11/09/86/27/240_F_1109862748_jlTx37enIurG233DEG2VhmA8GiMMZGMA.jpg", price: 7000 },
@@ -133,8 +78,9 @@ export const servicesData = {
   {
     id: "electrical-system",
     title: "Electrical System",
+        image:"https://t4.ftcdn.net/jpg/07/36/15/71/240_F_736157195_WJkCpvOoMh3jja7DUjQT5ChrsPHVGOLQ.jpg",
     catagory: "Car Repair",
-    icon: "electrical",
+    icon: <GiElectricalCrescent/>,desc:"Reliable electrical diagnostics and repairs for modern vehicle technology.",
     services: [
       { name: "Battery Testing & Replacement",img:"https://t4.ftcdn.net/jpg/07/36/15/71/240_F_736157195_WJkCpvOoMh3jja7DUjQT5ChrsPHVGOLQ.jpg", price: 800 },
       { name: "Alternator Repair", img:"https://t4.ftcdn.net/jpg/19/88/68/31/240_F_1988683156_vrSDdGMtq9477vFXHZR39mFLncTz8x8O.jpg", price: 3500 },
@@ -147,8 +93,9 @@ export const servicesData = {
   {
     id: "detailing-protection",
     title: "Car Detailing & Protection",
-    catagory: "Car Repair",
-    icon: "detailing",
+        image:"https://t4.ftcdn.net/jpg/03/09/26/47/240_F_309264799_quQ68kZAMUppexILlI8NIKdW38fi2txj.jpg",
+    catagory: "Car Repair",desc:"Preserve your vehicle's appearance with premium detailing and protective treatments",
+   icon: <FcDataProtection/>,
     services: [
       { name: "Exterior Washing",img:"https://t4.ftcdn.net/jpg/03/09/26/47/240_F_309264799_quQ68kZAMUppexILlI8NIKdW38fi2txj.jpg", price: 500 },
       { name: "Interior Deep Cleaning",img:"https://t3.ftcdn.net/jpg/18/80/78/90/240_F_1880789072_KESXGtcE5YLTe4Ryy9fMddAoag23Q3ro.jpg", price: 3000 },
@@ -161,8 +108,9 @@ export const servicesData = {
   {
     id: "lubrication-fluids",
     title: "Lubrication & Fluids",
-    catagory: "Car Repair",
-    icon: "fluids",
+        image:"https://t4.ftcdn.net/jpg/12/71/40/01/240_F_1271400122_q5z8Z5tJAwHkwS9L5nMA10UGsZcXOnwa.jpg",
+    catagory: "Car Repair",desc:"Extend component life through professional fluid replacement and lubrication services.",
+   icon: <Droplet />,
     services: [
       { name: "Engine Oil Change",img:"https://t4.ftcdn.net/jpg/12/71/40/01/240_F_1271400122_q5z8Z5tJAwHkwS9L5nMA10UGsZcXOnwa.jpg", price: 2500 },
       { name: "Gear Oil Change",img:"https://t4.ftcdn.net/jpg/08/14/94/37/240_F_814943741_5RqkROZE5GUGktxrX6mKie8TvZoUNV0T.jpg", price: 1800 },
@@ -173,9 +121,10 @@ export const servicesData = {
   },
   {
     id: "general-maintenance",
-    title: "General Maintenance",
+        image:"https://t3.ftcdn.net/jpg/08/34/67/08/240_F_834670831_9s5AmMneN02Up6J5kvlklQaJYpkf4BWz.jpg",
+    title: "General Maintenance",desc:"Prevent costly repairs with scheduled maintenance and comprehensive inspections.",
     catagory: "Car Repair",
-    icon: "maintenance",
+   icon: <GrHostMaintenance/>,
     services: [
       { name: "Periodic Service (Full Service)", img:"https://t3.ftcdn.net/jpg/08/34/67/08/240_F_834670831_9s5AmMneN02Up6J5kvlklQaJYpkf4BWz.jpg", price: 5000 },
       { name: "Engine Inspection",img:"https://t4.ftcdn.net/jpg/03/43/35/51/240_F_343355106_R4VBZlqdAtdp05gL4TYEMsjylTlvKY4c.jpg", price: 1500 },
@@ -187,8 +136,10 @@ export const servicesData = {
   {
     id: "body-repair",
     title: "Body & Repair Work",
+        image:"https://t3.ftcdn.net/jpg/08/52/79/38/240_F_852793857_2FGG0B3mAhTcjHM17ZHlaKUeYDmUYzXm.jpg",
     catagory: "Car Repair",
-    icon: "body",
+    desc:"Restore your vehicle's original appearance with expert bodywork and paint correction.",
+   icon: <GiAutoRepair/>,
     services: [
       { name: "Denting & Painting",img:"https://t3.ftcdn.net/jpg/08/52/79/38/240_F_852793857_2FGG0B3mAhTcjHM17ZHlaKUeYDmUYzXm.jpg", price: 10000 },
       { name: "Accident Repair", img:"https://t3.ftcdn.net/jpg/06/49/31/18/240_F_649311826_Thpto6mmlaGezH0ygt1YUrooKVJMSKOy.jpg",price: 15000 },
@@ -202,130 +153,139 @@ export const servicesData = {
 export const bikeServicesAPI = [
   {
     id: "engine-performance",
-    title: "Engine & Performance",
+    title: "Engine & Performance", desc: "Maximize motorcycle performance with advanced diagnostics, tuning and engine optimization.",
     catagory: "Motorcycle Repair",
-    icon: "engine",
+    image:"https://t4.ftcdn.net/jpg/19/67/20/23/240_F_1967202309_8U9j4BQCmi4k9HaseDkyY7acGAslQQ4u.jpg",
+    icon: <PiEngineBold/>,
     services: [
       { name: "Engine Diagnostics", img:"https://t4.ftcdn.net/jpg/19/67/20/23/240_F_1967202309_8U9j4BQCmi4k9HaseDkyY7acGAslQQ4u.jpg", price: 800 },
       { name: "Engine Tuning",img:"https://t3.ftcdn.net/jpg/11/34/39/64/240_F_1134396434_gLC0qPacaaBb4qJD4U3wSGmCnfDigjsL.jpg", price: 2500 },
       { name: "ECU Remapping", img:"https://media.istockphoto.com/id/2220314447/photo/motorcycle-system-diagnostic-scanning-for-faults-across-engine-electrical-and-sensor-modules.jpg?s=2048x2048&w=is&k=20&c=2rwyrMGUfdoR8G1tsgPRVE1j2ASv8WaW9GaFTdmHkX4=",price: 6000 },
-      { name: "Engine Overhaul", img:"",price: 18000 },
-      { name: "Fuel Injection Service",img:"", price: 2000 },
-      { name: "Engine Oil Change",img:"", price: 700 },
-      { name: "Compression Test",img:"", price: 1000 }
+      { name: "Engine Overhaul", img:"https://t3.ftcdn.net/jpg/19/58/31/10/240_F_1958311021_zvXSP40obNE3lSuv7Gh5cTsU8Cu9Wclg.jpg",price: 18000 },
+      { name: "Fuel Injection Service",img:"https://t4.ftcdn.net/jpg/10/12/70/95/240_F_1012709511_p6blanbEDMGLAe6wRc9mt7SyRPcycoNL.jpg", price: 2000 },
+      { name: "Engine Oil Change",img:"https://t3.ftcdn.net/jpg/06/92/84/04/240_F_692840438_hSaTkKI2sPyfMYJ9hhLISanVjrwC0v4I.jpg", price: 700 },
+      
     ]
   },
 
   {
     id: "brake-system",
     title: "Brake System",
-    catagory: "Motorcycle Repair",
-    icon: "brake",
+     image:"https://t4.ftcdn.net/jpg/12/89/57/99/240_F_1289579926_wCxO2PJTq8OwAHreXO3FfHHgTUNcesae.jpg",
+    catagory: "Motorcycle Repair",desc:"Ensure safe and responsive braking with complete brake inspection and maintenance.",
+   icon: <GiCarWheel/>,
     services: [
-      { name: "Brake Pad Replacement", img:"",price: 1200 },
-      { name: "Brake Disc Service",img:"", price: 1500 },
-      { name: "Brake Fluid Change",img:"", price: 500 },
-      { name: "ABS Check",img:"", price: 800 },
-      { name: "Brake Caliper Service",img:"", price: 1000 },
-      { name: "Brake Noise Fixing",img:"", price: 400 }
+      { name: "Brake Pad Replacement", img:"https://t4.ftcdn.net/jpg/12/89/57/99/240_F_1289579926_wCxO2PJTq8OwAHreXO3FfHHgTUNcesae.jpg",price: 1200 },
+      { name: "Brake Disc Service",img:"https://t3.ftcdn.net/jpg/13/08/48/12/240_F_1308481286_5PBbseVrmvnjJc7w8bpJot96SwY9onhW.jpg", price: 1500 },
+      { name: "Brake Fluid Change",img:"https://t4.ftcdn.net/jpg/10/70/11/39/240_F_1070113993_hstc3LMcZdErUen2VTr41KwKmecsbiZR.jpg", price: 500 },
+      { name: "ABS Check",img:"https://t3.ftcdn.net/jpg/15/12/07/22/240_F_1512072296_SBotZ77QSRPmlNDTIlIJ5QohwL0WhpVb.jpg", price: 800 },
+      { name: "Brake Caliper Service",img:"https://t4.ftcdn.net/jpg/20/15/40/29/240_F_2015402907_5zIDxbbNM3gSAgBwFDxoOJHDV1wBvq9k.jpg", price: 1000 },
+      { name: "Brake Noise Fixing",img:"https://t4.ftcdn.net/jpg/05/63/86/51/240_F_563865129_kiFTEm9gGrWYJhsTLkPfHYUccNRf8Tp5.jpg", price: 400 }
     ]
   },
 
   {
     id: "suspension-setup",
     title: "Suspension Setup",
-    catagory: "Motorcycle Repair",
-    icon: "suspension",
+    image:"https://t3.ftcdn.net/jpg/02/62/54/90/240_F_262549025_T6UJjT7z4IpyQ6uglCmihVoMO0TI7NXR.jpg",
+    catagory: "Motorcycle Repair",desc:"Improve comfort, stability and cornering performance through expert suspension tuning.",
+   icon: <GiSuspensionBridge/>,
     services: [
-      { name: "Front Fork Service",img:"", price: 1500 },
-      { name: "Rear Shock Absorber Repair", img:"",price: 2500 },
-      { name: "Suspension Tuning",img:"", price: 1800 },
-      { name: "Oil Seal Replacement", img:"",price: 1200 },
-      { name: "Rider Weight Setup",img:"", price: 1000 }
+      { name: "Front Fork Service",img:"https://t3.ftcdn.net/jpg/02/62/54/90/240_F_262549025_T6UJjT7z4IpyQ6uglCmihVoMO0TI7NXR.jpg", price: 1500 },
+      { name: "Rear Shock Absorber Repair", img:"https://t4.ftcdn.net/jpg/20/69/34/71/240_F_2069347130_uUSlTzTZILKONe56XMqmZELqVS6NX2Sb.jpg",price: 2500 },
+      { name: "Suspension Tuning",img:"https://t4.ftcdn.net/jpg/20/41/22/55/240_F_2041225530_q4CDcfZ0Cm8k9HV0zueIG4bXtylF0A2y.jpg", price: 1800 },
+      { name: "Oil Seal Replacement", img:"https://t4.ftcdn.net/jpg/04/60/17/63/240_F_460176320_LKvR3NC9m1K7wY4cYLRMEDItGimbro0c.jpg",price: 1200 },
+      
     ]
   },
 
   {
     id: "electrical-system",
     title: "Electrical System",
-    catagory: "Motorcycle Repair",
-    icon: "electrical",
+    image:"https://t4.ftcdn.net/jpg/15/40/90/31/240_F_1540903152_Xm270qa5Q5JJ0NoDNBvTv1oCEQPh0iqF.jpg",
+    catagory: "Motorcycle Repair",desc:"Professional electrical diagnostics and repairs for batteries, wiring and sensors.",
+   icon: <GiElectricalCrescent/>,
     services: [
-      { name: "Battery Testing",img:"", price: 300 },
-      { name: "Wiring Repair",img:"", price: 1200 },
-      { name: "Starter Motor Service",img:"", price: 1500 },
-      { name: "Lighting System Fix", img:"",price: 800 },
-      { name: "Sensor Diagnostics",img:"", price: 600 }
+      { name: "Battery Testing",img:"https://t4.ftcdn.net/jpg/15/40/90/31/240_F_1540903152_Xm270qa5Q5JJ0NoDNBvTv1oCEQPh0iqF.jpg", price: 300 },
+      { name: "Wiring Repair",img:"https://t3.ftcdn.net/jpg/15/85/90/42/240_F_1585904251_iAmvCSc8qSTqNm6mbHvxHcxj9v8VTEsz.jpg", price: 1200 },
+      { name: "Starter Motor Service",img:"https://t4.ftcdn.net/jpg/05/13/46/19/240_F_513461993_UfHDwPIxTBCa0Fk7VTU3sYliKDh4BVZc.jpg", price: 1500 },
+      { name: "Lighting System Fix", img:"https://t4.ftcdn.net/jpg/17/01/86/65/240_F_1701866517_fyBzYaqvBo42dUJG9dzsI9XjliBxJMFv.jpg",price: 800 },
+      { name: "Sensor Diagnostics",img:"https://t4.ftcdn.net/jpg/20/16/09/99/240_F_2016099957_6Yyv1AVVHRTGaKeQTRN81bzDgYAFE5X0.jpg", price: 600 }
     ]
   },
 
   {
     id: "chain-transmission",
-    title: "Chain & Transmission",
+    title: "Chain & Transmission",desc:"Maintain smooth power delivery with chain, sprocket and transmission servicing.",
     catagory: "Motorcycle Repair",
-    icon: "chain",
+    image:"https://t4.ftcdn.net/jpg/20/65/35/13/240_F_2065351301_kBMEulMANjxzLNHNcAbcqrIHzxSjlp9L.jpg",
+   icon: <GiAndromedaChain/>,
     services: [
-      { name: "Chain Cleaning",img:"", price: 300 },
-      { name: "Chain Lubrication",img:"", price: 200 },
-      { name: "Chain Replacement",img:"", price: 1500 },
-      { name: "Sprocket Replacement", img:"",price: 2000 },
-      { name: "Gear Box Service",img:"", price: 3500 }
+      { name: "Chain Cleaning",img:"https://t4.ftcdn.net/jpg/20/65/35/13/240_F_2065351301_kBMEulMANjxzLNHNcAbcqrIHzxSjlp9L.jpg", price: 300 },
+      { name: "Chain Lubrication",img:"https://t3.ftcdn.net/jpg/20/61/23/64/240_F_2061236469_YM5aWkMEx1czmzHgCQhZ2Vj05boud15o.jpg", price: 200 },
+      { name: "Chain Replacement",img:"https://t3.ftcdn.net/jpg/06/48/44/54/240_F_648445402_ZouezdjxF8XCmZliCPQvTIXl6CYvhDqJ.jpg", price: 1500 },
+      { name: "Sprocket Replacement", img:"https://t4.ftcdn.net/jpg/15/61/54/15/240_F_1561541531_rCxnR5YJ2JzsKSNHvxtNihhJNtrQGFw6.jpg",price: 2000 },
+      { name: "Gear Box Service",img:"https://t4.ftcdn.net/jpg/19/41/50/35/240_F_1941503563_LW1vFmAiGO2U8yqWI4LHbqxXfDjg1oq5.jpg", price: 3500 }
     ]
   },
 
   {
     id: "tyre-wheel",
-    title: "Tyre & Wheel",
+    title: "Tyre & Wheel",desc:"Enhance grip, balance and road safety with tyre and wheel maintenance services.",
     catagory: "Motorcycle Repair",
-    icon: "wheel",
+    image:"https://t4.ftcdn.net/jpg/03/91/56/21/240_F_391562150_gtfAkIR2m4GKGjcJbo4rKi7QwWvQ4tsa.jpg",
+ icon: <GiCarWheel/>,
     services: [
-      { name: "Tyre Replacement",img:"", price: 500 },
-      { name: "Wheel Balancing", img:"",price: 400 },
-      { name: "Wheel Alignment",img:"", price: 600 },
-      { name: "Puncture Repair",img:"", price: 150 },
-      { name: "Rim Inspection",img:"", price: 300 }
+      { name: "Tyre Replacement",img:"https://t4.ftcdn.net/jpg/03/91/56/21/240_F_391562150_gtfAkIR2m4GKGjcJbo4rKi7QwWvQ4tsa.jpg", price: 500 },
+      { name: "Wheel Balancing", img:"https://t4.ftcdn.net/jpg/02/87/37/15/240_F_287371537_VzhYvTtRzF85Lup2CtAECVxIgSYYOGRk.jpg",price: 400 },
+      { name: "Wheel Alignment",img:"https://t3.ftcdn.net/jpg/02/22/20/24/240_F_222202422_olU63Rrgski89CX5Pw7CVPv4MrbkNbW1.jpg", price: 600 },
+      { name: "Puncture Repair",img:"https://t4.ftcdn.net/jpg/16/57/92/47/240_F_1657924737_8oV9DhFGuO6C9s0t7TXhqYc6L00cICbs.jpg", price: 150 },
+      { name: "Rim Inspection",img:"https://t4.ftcdn.net/jpg/09/90/99/27/240_F_990992786_E21HSb6zfNoPuUGHaXiOBKs316pDJQQe.jpg", price: 300 }
     ]
   },
 
   {
     id: "accesories-mod",
-    title: "Accessories & Modification",
+    title: "Accessories & Modification",desc:"Customize your motorcycle with premium accessories, lighting and performance upgrades.",
     catagory: "Motorcycle Repair",
-    icon: "mod",
+    image:"https://t4.ftcdn.net/jpg/20/60/52/05/240_F_2060520582_PJeCrSd2dTNI1gBPjXCqhAjyovfWtO2D.jpg",
+icon: <GrUpgrade/>,
     services: [
-      { name: "Exhaust Upgrade",img:"", price: 3000 },
-      { name: "LED Light Setup",img:"", price: 1000 },
-      { name: "Handle Bar Customization",img:"", price: 1500 },
-      { name: "Windshield Install", img:"",price: 1200 },
-      { name: "Custom Body Kit",img:"", price: 5000 }
+      { name: "Exhaust Upgrade",img:"https://t4.ftcdn.net/jpg/20/60/52/05/240_F_2060520582_PJeCrSd2dTNI1gBPjXCqhAjyovfWtO2D.jpg", price: 3000 },
+      { name: "LED Light Setup",img:"https://t3.ftcdn.net/jpg/17/63/30/22/240_F_1763302270_aepHEkg7agoat866Bj08hWB03Q64HjSv.jpg", price: 1000 },
+      { name: "Handle Bar Customization",img:"https://as1.ftcdn.net/v2/jpg/18/68/91/32/1000_F_1868913273_lxBtIrkYBWzs0z5jzSQCH8dfyX77R1TR.jpg", price: 1500 },
+   
+      { name: "Custom Body Kit",img:"https://images.pexels.com/photos/37501800/pexels-photo-37501800.jpeg", price: 5000 }
     ]
   },
 
   {
     id: "clean-detailing",
-    title: "Cleaning & Detailing",
+    title: "Cleaning & Detailing",desc:"Keep your motorcycle looking showroom fresh with professional detailing and protection.",
     catagory: "Motorcycle Repair",
-    icon: "detail",
+    image:"https://t4.ftcdn.net/jpg/05/07/14/85/240_F_507148514_3yxNP7eUvWjxsoLIxvI18FQWfDgSaGts.jpg",
+  icon: <MdOutlineCleaningServices/>,
     services: [
-      { name: "Bike Washing",img:"", price: 200 },
-      { name: "Engine Cleaning", img:"",price: 800 },
-      { name: "Chain Deep Clean", img:"",price: 500 },
-      { name: "Polishing", img:"",price: 1200 },
-      { name: "Ceramic Coating", img:"",price: 6000 }
+      { name: "Bike Washing",img:"https://t4.ftcdn.net/jpg/05/07/14/85/240_F_507148514_3yxNP7eUvWjxsoLIxvI18FQWfDgSaGts.jpg", price: 200 },
+      { name: "Engine Cleaning", img:"https://images.pexels.com/photos/11536993/pexels-photo-11536993.jpeg",price: 800 },
+      { name: "Chain Deep Clean", img:"https://images.pexels.com/photos/34240236/pexels-photo-34240236.jpeg",price: 500 },
+      { name: "Polishing", img:"https://images.pexels.com/photos/4876631/pexels-photo-4876631.jpeg",price: 1200 },
+      { name: "Ceramic Coating", img:"https://t4.ftcdn.net/jpg/10/36/60/87/240_F_1036608737_noZJTUQ5TuAWQYFgjgo2MpJ8PWW1gsyR.jpg",price: 6000 }
     ]
   },
 
   {
     id: "general-maintenance",
-    title: "General Maintenance",
+    title: "General Maintenance",desc:"Routine maintenance and inspections designed to keep your bike in peak condition.",
     catagory: "Motorcycle Repair",
-    icon: "maintenance",
+    image:"https://t3.ftcdn.net/jpg/10/01/72/60/240_F_1001726059_qFhyLLHCJVezVaH4ueQmCP653aLN8By2.jpg",
+  icon: <GrHostMaintenance />,
     services: [
-      { name: "Full Bike Service",img:"", price: 2500 },
-      { name: "Oil Change",img:"", price: 700 },
-      { name: "Filter Replacement",img:"", price: 500 },
-      { name: "Spark Plug Change", img:"",price: 400 },
-      { name: "Periodic Inspection",img:"", price: 800 }
+      { name: "Full Bike Service",img:"https://t3.ftcdn.net/jpg/10/01/72/60/240_F_1001726059_qFhyLLHCJVezVaH4ueQmCP653aLN8By2.jpg", price: 2500 },
+      { name: "Oil Change",img:"https://t3.ftcdn.net/jpg/07/13/38/32/240_F_713383209_fcnjlb3iWL0ZWvfdLSUaZbtIim1FqYWe.jpg", price: 700 },
+      { name: "Filter Replacement",img:"https://t3.ftcdn.net/jpg/02/10/88/14/240_F_210881473_HSqZmXVzcpClSe5pGnjGqKAZLZlZcEck.jpg", price: 500 },
+      { name: "Spark Plug Change", img:"https://t3.ftcdn.net/jpg/03/15/26/64/240_F_315266484_fJzI7aZE87GoIGel81soGn8pMUWMA7af.jpg",price: 400 },
+      { name: "Periodic Inspection",img:"https://t4.ftcdn.net/jpg/10/01/72/49/240_F_1001724901_KbNeF6qYmSbESLaTDUFP5wo4ligjSQ7w.jpg", price: 800 }
     ]
   }
 ];

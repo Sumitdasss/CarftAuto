@@ -22,7 +22,7 @@ const Header = () => {
             <a href="#" className="flex hidden md:block items-center gap-2 group">
              
               <span className="text-xl font-bold tracking-tight uppercase bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent ">
-                Craft<span className="text-red-500">Motors</span>
+                Craft<span className="text-cyan-400">Motors</span>
               </span>
             </a>
           </div>
