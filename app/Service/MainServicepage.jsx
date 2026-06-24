@@ -151,58 +151,66 @@ const grouped = useMemo(() => {
       {/* CONTENT */}
       <div className="max-w-360 mx-auto  mt-14 p-5 md:p-0 space-y-12">
 
-        {grouped.map((category,index) => (
-          <div key={index}>
+        {grouped.map((category, index) => (
+  <div key={index} className="mb-10">
 
-            {/* CATEGORY TITLE */}
-            <h2 className="text-xl md:text-2xl font-bold uppercase text-orange-400 mb-6">
-              {category.title}
-            </h2>
+    {/* CATEGORY TITLE */}
+    <h2 className="text-xl md:text-2xl font-bold uppercase text-orange-400 mb-6">
+      {category.title}
+    </h2>
 
-            {/* SERVICES GRID */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {/* SERVICES GRID */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
-              {category.services.map((service, i) => (
-                <div
-                  key={i}
-                  className="group p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-500/40 transition"
-                >
+      {category.services.map((service, i) => (
+        <div
+          key={i}
+          className="group p-5 rounded-xl bg-white/5 border border-white/10 hover:border-orange-500/40 transition"
+        >
 
-                  {/* SERVICE NAME */}
-                  <div className="flex justify-between items-center gap-2 text-slate-300 group-hover:text-white">
-                    
-                    <span className="text-sm flex items-center font-medium">
-                      <FiCheckCircle className="text-orange-400 mr-2" />
-                      {service.name}
-                    </span>
-                    <div className="flex items-center justify-between mt-3">
-  <span className="text-orange-400 font-bold">
-    ৳ {service.price.toLocaleString()}
-  </span>
+          {/* IMAGE */}
+          <img
+            src={service.img}
+            alt={service.name}
+            className="w-full h-[200px] object-cover rounded-lg mb-4"
+          />
 
-  <span className="text-xs text-slate-500">
-    Starting Price
-  </span>
-</div>
-                  </div>
-
-                  {/* hover line */}
-                  <div className="mt-3 h-[1px] w-0 group-hover:w-full bg-gradient-to-r from-orange-500 to-transparent transition-all duration-300" />
-
-                  {/* BOOK BUTTON */}
-                  <button className="mt-4 w-full py-2.5 rounded-lg text-xs font-bold uppercase tracking-wide
-                    bg-white/5 border border-white/10
-                    hover:bg-orange-500 hover:text-black hover:border-orange-500
-                    transition-all duration-300">
-                    Book Service
-                  </button>
-
-                </div>
-              ))}
-
-            </div>
+          {/* NAME */}
+          <div className="flex items-center text-slate-300 group-hover:text-white mb-2">
+            <FiCheckCircle className="text-orange-400 mr-2" />
+            <span className="text-sm font-medium">
+              {service.name}
+            </span>
           </div>
-        ))}
+
+          {/* PRICE */}
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-orange-400 font-bold">
+              ৳ {service.price.toLocaleString()}
+            </span>
+
+            <span className="text-xs text-slate-500">
+              Starting Price
+            </span>
+          </div>
+
+          {/* hover line */}
+          <div className="h-[1px] w-0 group-hover:w-full bg-gradient-to-r from-orange-500 to-transparent transition-all duration-300" />
+
+          {/* BUTTON */}
+          <button className="mt-4 w-full py-2.5 rounded-lg text-xs font-bold uppercase tracking-wide
+            bg-white/5 border border-white/10
+            hover:bg-orange-500 hover:text-black hover:border-orange-500
+            transition-all duration-300">
+            Book Service
+          </button>
+
+        </div>
+      ))}
+
+    </div>
+  </div>
+))}
 
       </div>
     </section>
