@@ -12,202 +12,172 @@ const Header = () => {
  
 
   return (
-    <div className="sticky relative top-0 z-50 w-full border-b border-white/10 bg-[radial-gradient(circle_at_top,_#0f4c75,_#081c2c,_#000000)] backdrop-blur-md text-white">
-      <div className="mx-auto max-w-360 ">
-        <div className="flex h-20 items-center justify-between gap-4">
+     <>
+      {/* ✅ Sidebar — Header এর সম্পূর্ণ বাইরে */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-[60] flex lg:hidden">
           
-          {/* 1. Brand Logo */}
-          <div className="flex flex-shrink-0 items-center">
-            <img src="/2.png" alt="" className='w-25 h-25' />
-            <a href="#" className="flex hidden md:block items-center gap-2 group">
-             
-              <span className="text-xl font-bold tracking-tight uppercase bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent ">
-                Craft<span className="text-cyan-400">Motors</span>
-              </span>
+          {/* Sidebar Panel */}
+          <div
+            className="w-90 overflow-y-auto px-4 py-6 bg-[radial-gradient(circle_at_left,_#0f4c75,_#081c2c,_#000000)]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Logo + Close */}
+            <div className="flex justify-between items-center mb-4">
+              <a href="#" className="flex items-center ">
+                <img src="/2.png" alt="" className="w-25 h-25" />
+                <span className="text-xl font-bold tracking-tight uppercase bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+                  Craft<span className="text-red-500">Motors</span>
+                </span>
+              </a>
+              <button onClick={() => setIsMobileMenuOpen(false)}>
+                <FiX className="text-[20px] text-white cursor-pointer" />
+              </button>
+            </div>
+
+            {/* Nav Links */}
+            <a href="/" onClick={() => setIsMobileMenuOpen(false)} className="block rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 hover:text-orange-500 transition-colors">
+              Home
             </a>
-          </div>
+            <a href="/Service?type=car" onClick={() => setIsMobileMenuOpen(false)} className="block rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 hover:text-orange-500 transition-colors">
+              Car Services
+            </a>
+            <a href="/Service?type=bike" onClick={() => setIsMobileMenuOpen(false)} className="block rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 hover:text-orange-500 transition-colors">
+              Bike Services
+            </a>
+            <a href="#" className="block rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 hover:text-orange-500 transition-colors">
+              Shop (Parts)
+            </a>
 
-          {/* 2. Global Search Bar */}
-          <div className="   max-w-md relative group">
-            <input
-              type="text"
-              placeholder="Search premium parts (e.g., Brake Pads, V8 Engine)..."
-              className="md:w-60 w-full rounded-full bg-white/5 border border-white/10 py-2.5 pl-11 pr-4 text-sm text-slate-200 placeholder-slate-400 outline-none backdrop-blur-sm transition-all duration-300 focus:border-orange-500/50 focus:bg-white/10 focus:ring-2 focus:ring-orange-500/20"
-            />
-            <FiSearch className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400 group-focus-within:text-orange-500 transition-colors duration-300" />
-          </div>
-
-          {/* 3. Navigation Menu Items */}
-          <nav className="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide">
-            <a href="/" className="hover:text-red-500  transition-colors duration-200">Home</a>
-            
-            {/* Dropdown for Services */}
-            <div className="relative group/menu cursor-pointer py-2">
-              <span className="flex hover:text-red-500 items-center gap-1.5 text-slate-300  transition-colors duration-200">
-                Services <FaChevronDown className="text-[10px] group-hover/menu:rotate-180 transition-transform duration-300" />
-              </span>
-
-              <div className="absolute top-6 left-0 mt-1 w-48  rounded-xl border border-white/10 bg-slate-900 p-2 shadow-2xl opacity-0 scale-95 pointer-events-none group-hover/menu:opacity-100 group-hover/menu:scale-100 group-hover/menu:pointer-events-auto transition-all duration-200">
-                <a  href="/Service?type=car" className="block rounded-lg px-4 py-2 text-slate-300 hover:bg-white/5 hover:text-orange-500 transition-all">Car Repair</a>
-                <a href="/Service?type=bike" className="block rounded-lg px-4 py-2 text-slate-300 hover:bg-white/5 hover:text-orange-500 transition-all">Motorcycle Repair</a>
-              </div>
-
-            </div>
-
-            <a href="#" className="text-slate-300 hover:text-red-500  transition-colors duration-200">Shop (Parts)</a>
- <div className="relative group/menu cursor-pointer py-2">
-              <span className="flex hover:text-red-500 items-center gap-1.5 text-slate-300  transition-colors duration-200">
-                Gallery <FaChevronDown className="text-[10px] group-hover/menu:rotate-180 transition-transform duration-300" />
-              </span>
-              <div className="absolute top-6 left-0 mt-1 w-48  rounded-xl border border-white/10 bg-slate-900 p-2 shadow-2xl opacity-0 scale-95 pointer-events-none group-hover/menu:opacity-100 group-hover/menu:scale-100 group-hover/menu:pointer-events-auto transition-all duration-200">
-                <a href="#" className="block rounded-lg px-4 py-2 text-slate-300 hover:bg-white/5 hover:text-orange-500 transition-all">Photo Gallery</a>
-                <a href="#" className="block rounded-lg px-4 py-2 text-slate-300 hover:bg-white/5 hover:text-orange-500 transition-all"> Video Gallery</a>
+            {/* Gallery Dropdown */}
+            <div className="w-full">
+              <button
+                onClick={() => setIsMobileMenuOpen2(!isMobileMenuOpen2)}
+                className="flex w-full items-center justify-between px-4 py-2.5 text-base font-medium text-slate-300 hover:text-orange-500 transition-colors outline-none"
+              >
+                <span>Gallery</span>
+                <FaChevronDown className={`text-[12px] transition-transform duration-300 ${isMobileMenuOpen2 ? "rotate-180 text-orange-500" : ""}`} />
+              </button>
+              <div className={`pl-4 overflow-hidden border-l border-white/5 transition-all duration-300 ${isMobileMenuOpen2 ? "max-h-40 opacity-100 my-1" : "max-h-0 opacity-0"}`}>
+                <a href="#" className="block py-2 text-sm text-slate-400 hover:text-orange-500 transition-all">Photo Gallery</a>
+                <a href="#" className="block py-2 text-sm text-slate-400 hover:text-orange-500 transition-all">Video Gallery</a>
               </div>
             </div>
-            <a href="#" className="text-slate-300 hover:text-red-500  transition-colors duration-200">About Us</a>
-            <a href="#" className="text-slate-300 hover:text-red-500  transition-colors duration-200">Contact</a>
-          </nav>
 
-          {/* 4. User Actions */}
-          <div className="flex items-center gap-2 sm:gap-4">
-            
-            {/* Search Icon for Mobile Only */}
-           
+            <a href="#" className="block rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 hover:text-orange-500 transition-colors">
+              About Us
+            </a>
+            <a href="#" className="block rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 hover:text-orange-500 transition-colors">
+              Contact
+            </a>
 
-            {/* Wishlist */}
-            <button className="relative p-2 hidden md:block text-slate-400 hover:text-white transition-all duration-200 hover:scale-105">
-              <FiHeart className="h-5 w-5" />
-            </button>
-
-            {/* Cart with Live Count badge */}
-            <button className="relative hidden md:block p-2 text-slate-400 hover:text-white transition-all duration-200 hover:scale-105">
-              <FiShoppingCart className="h-5 w-5" />
-              
-            </button>
-              <button className="group relative  hidden md:flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-orange-600 to-amber-500 text-black font-bold overflow-hidden hover:scale-[1.03] transition">
-                          <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition" />
-                          <FiCalendar className="relative z-10" />
-                          <span className="relative z-10 uppercase tracking-wide">
-                            Book Service
-                          </span>
-                        </button>
-
-            {/* Profile/Login Button */}
-            <button className="hidden   items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-slate-200 hover:border-orange-500/40 hover:bg-white/10 transition-all duration-300">
-              <FiUser className="h-4 w-4 text-orange-500" />
-              <span>Login</span>
-            </button>
-
-            {/* Mobile Menu Open/Close Button */}
-            <button 
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-slate-400 hover:text-white cursor-pointer lg:hidden transition-colors"
-            >
-               <FiMenu className="h-6 w-6" />
-            </button>
+            {/* Bottom Buttons */}
+            <div className="mt-6 flex flex-col gap-2 border-t border-white/5 pt-6">
+              <button className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-orange-500/20 active:scale-[0.98] transition-transform">
+                <FiUser className="h-4 w-4" />
+                <span>Login / Register</span>
+              </button>
+              <button className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-orange-500/20 active:scale-[0.98] transition-transform">
+                <FiHeart className="h-4 w-4" />
+                <span>Wishlist</span>
+              </button>
+              <button className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-orange-500/20 active:scale-[0.98] transition-transform">
+                <FiShoppingCart className="h-4 w-4" />
+                <span>Cart</span>
+              </button>
+            </div>
           </div>
 
+          {/* Dark Overlay — ক্লিক করলে বন্ধ হবে */}
+          <div
+            className="flex-1 bg-black/60"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        </div>
+      )}
+
+   
+      <div className="sticky top-0 z-50 w-full border-b border-white/10 bg-[radial-gradient(circle_at_top,_#0f4c75,_#081c2c,_#000000)] backdrop-blur-md text-white">
+        <div className="mx-auto max-w-360">
+          <div className="flex h-20 items-center justify-between gap-4">
+
+            {/* Logo */}
+            <div className="flex flex-shrink-0 items-center">
+              <img src="/2.png" alt="" className="w-25 h-25" />
+              <a href="#" className="hidden md:block">
+                <span className="text-xl font-bold tracking-tight uppercase bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+                  Craft<span className="text-cyan-400">Motors</span>
+                </span>
+              </a>
+            </div>
+
+            {/* Search */}
+            <div className="max-w-md relative group">
+              <input
+                type="text"
+                placeholder="Search premium parts (e.g., Brake Pads, V8 Engine)..."
+                className="md:w-60 w-full rounded-full bg-white/5 border border-white/10 py-2.5 pl-11 pr-4 text-sm text-slate-200 placeholder-slate-400 outline-none backdrop-blur-sm transition-all duration-300 focus:border-orange-500/50 focus:bg-white/10 focus:ring-2 focus:ring-orange-500/20"
+              />
+              <FiSearch className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400 group-focus-within:text-orange-500 transition-colors duration-300" />
+            </div>
+
+            {/* Desktop Nav */}
+            <nav className="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide">
+              <a href="/" className="hover:text-red-500 transition-colors duration-200">Home</a>
+
+              <div className="relative group/menu cursor-pointer py-2">
+                <span className="flex hover:text-red-500 items-center gap-1.5 text-slate-300 transition-colors duration-200">
+                  Services <FaChevronDown className="text-[10px] group-hover/menu:rotate-180 transition-transform duration-300" />
+                </span>
+                <div className="absolute top-6 left-0 mt-1 w-48 rounded-xl border border-white/10 bg-slate-900 p-2 shadow-2xl opacity-0 scale-95 pointer-events-none group-hover/menu:opacity-100 group-hover/menu:scale-100 group-hover/menu:pointer-events-auto transition-all duration-200">
+                  <a href="/Service?type=car" className="block rounded-lg px-4 py-2 text-slate-300 hover:bg-white/5 hover:text-orange-500 transition-all">Car Repair</a>
+                  <a href="/Service?type=bike" className="block rounded-lg px-4 py-2 text-slate-300 hover:bg-white/5 hover:text-orange-500 transition-all">Motorcycle Repair</a>
+                </div>
+              </div>
+
+              <a href="#" className="text-slate-300 hover:text-red-500 transition-colors duration-200">Shop (Parts)</a>
+
+              <div className="relative group/menu cursor-pointer py-2">
+                <span className="flex hover:text-red-500 items-center gap-1.5 text-slate-300 transition-colors duration-200">
+                  Gallery <FaChevronDown className="text-[10px] group-hover/menu:rotate-180 transition-transform duration-300" />
+                </span>
+                <div className="absolute top-6 left-0 mt-1 w-48 rounded-xl border border-white/10 bg-slate-900 p-2 shadow-2xl opacity-0 scale-95 pointer-events-none group-hover/menu:opacity-100 group-hover/menu:scale-100 group-hover/menu:pointer-events-auto transition-all duration-200">
+                  <a href="#" className="block rounded-lg px-4 py-2 text-slate-300 hover:bg-white/5 hover:text-orange-500 transition-all">Photo Gallery</a>
+                  <a href="#" className="block rounded-lg px-4 py-2 text-slate-300 hover:bg-white/5 hover:text-orange-500 transition-all">Video Gallery</a>
+                </div>
+              </div>
+
+              <a href="#" className="text-slate-300 hover:text-red-500 transition-colors duration-200">About Us</a>
+              <a href="#" className="text-slate-300 hover:text-red-500 transition-colors duration-200">Contact</a>
+            </nav>
+
+            {/* User Actions */}
+            <div className="flex items-center gap-2 sm:gap-4">
+              <button className="relative p-2 hidden md:block text-slate-400 hover:text-white transition-all duration-200 hover:scale-105">
+                <FiHeart className="h-5 w-5" />
+              </button>
+              <button className="relative hidden md:block p-2 text-slate-400 hover:text-white transition-all duration-200 hover:scale-105">
+                <FiShoppingCart className="h-5 w-5" />
+              </button>
+              <button className="group relative hidden md:flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-orange-600 to-amber-500 text-black font-bold overflow-hidden hover:scale-[1.03] transition">
+                <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition" />
+                <FiCalendar className="relative z-10" />
+                <span className="relative z-10 uppercase tracking-wide">Book Service</span>
+              </button>
+
+              {/* Mobile Hamburger */}
+              <button
+                onClick={() => setIsMobileMenuOpen(true)}
+                className="p-2 text-slate-400 hover:text-white cursor-pointer lg:hidden transition-colors"
+              >
+                <FiMenu className="h-6 w-6" />
+              </button>
+            </div>
+
+          </div>
         </div>
       </div>
-
-      {/* Mobile Responsive Navigation Menu */}
-
-      <div
-  className={`lg:hidden absolute top-0 left-0 w-[360px] min-h-screen z-[60] border-t border-white/10 duration-200 ${
-    isMobileMenuOpen
-      ? "translate-x-0"
-      : "-translate-x-full"
-  }`}
->
-    
-  <div className="space-y-1 min-h-screen bg-[radial-gradient(circle_at_left,_#0f4c75,_#081c2c,_#000000)] px-4 py-6 sm:px-6">
- <div className="flex justify-between  items-center">
-            <a href="#" className="flex   items-center gap-2 group">
-              <img src="/2.png" alt="" className='w-25 h-25' />
-              <span className="text-xl font-bold tracking-tight uppercase bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent ">
-                Craft<span className="text-red-500">Motors</span>
-              </span>
-
-            </a>
-            <button onClick={()=>setIsMobileMenuOpen(false)}><FiX className='text-[20px] cursor-pointer'/></button>
-          </div>
-
-    <a href="/" onClick={()=>setIsMobileMenuOpen2(false)} className="block md:hover:bg-amber-500/10 rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 focus:bg-amber-500/10 focus:text-amber-500 md:hover:bg-amber-500 md:hover:text-amber-500 transition-colors">
-      Home
-    </a>
-    <a href="/Service?type=car" className="block md:hover:bg-amber-500/10 rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 focus:bg-amber-500/10 focus:text-amber-500 md:hover:bg-amber-500 md:hover:text-amber-500 transition-colors">
-      Car Services
-    </a>
-    <a href="/Service?type=bike" className="block md:hover:bg-amber-500/10 rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 focus:bg-amber-500/10 focus:text-amber-500 md:hover:bg-amber-500 md:hover:text-amber-500 transition-colors">
-     Bike Services
-    </a>
-    <a href="#" className="block md:hover:bg-amber-500/10 rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 focus:bg-amber-500/10 focus:text-amber-500 md:hover:bg-amber-500 md:hover:text-amber-500 transition-colors">
-      Shop (Parts)
-    </a>
-    <div className="w-full">
-  {/* Header Link Trigger */}
-  <button
-    onClick={() => setIsMobileMenuOpen2(!isMobileMenuOpen2)}
-    className="flex w-full items-center justify-between py-2.5 text-base font-medium text-slate-300 hover:text-orange-500 transition-colors duration-200 outline-none"
-  >
-    <span className='pl-4'>Gallery</span>
-    <FaChevronDown
-      className={`text-[12px] transition-transform duration-300 ${
-        isMobileMenuOpen2 ? "rotate-180 text-orange-500" : ""
-      }`}
-    />
-  </button>
-
-  {/* Submenu Dropdown */}
-  <div
-    className={`pl-4 overflow-hidden border-l border-white/5 transition-all duration-300 ease-in-out ${
-      isMobileMenuOpen2 ? "max-h-40 opacity-100 my-1" : "max-h-0 opacity-0"
-    }`}
-  >
-    <a
-      href="#"
-      className="block py-2 text-sm text-slate-400 hover:text-orange-500 transition-all"
-    >
-      Photo Gallery
-    </a>
-    <a
-      href="#"
-      className="block py-2 text-sm text-slate-400 hover:text-orange-500 transition-all"
-    >
-      Video Gallery
-    </a>
-  </div>
-</div>
-    <a href="#" className="block md:hover:bg-amber-500/10 rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 focus:bg-amber-500/10 focus:text-amber-500 md:hover:bg-amber-500 md:hover:text-amber-500 transition-colors">
-       About Us
-    </a>
-    <a href="#" className="block md:hover:bg-amber-500/10 rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 focus:bg-amber-500/10 focus:text-amber-500 md:hover:bg-amber-500 md:hover:text-amber-500 transition-colors">
-     Contact
-    </a>
-   
-    
-    <div className="pt-6 border-t border-white/5 sm:hidden">
-      <button className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-orange-500/20 active:scale-[0.98] transition-transform">
-        <FiUser className="h-4 w-4" />
-        <span>Login / Register</span>
-      </button>
-    </div>
-    <div className="pt-2 border-t border-white/5 sm:hidden">
-      <button className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-orange-500/20 active:scale-[0.98] transition-transform">
-        <FiHeart className="h-4 w-4" />
-        <span>Wishlist</span>
-      </button>
-    </div>
-    <div className="pt-2 border-t border-white/5 sm:hidden">
-      <button className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-orange-500/20 active:scale-[0.98] transition-transform">
-        <FiShoppingCart className="h-4 w-4" />
-        <span>Cart</span>
-      </button>
-    </div>
-  </div>
-</div>
-   
-    </div>
+    </>
   );
 };
 
