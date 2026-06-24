@@ -1,32 +1,65 @@
 "use client";
-
-import React, { useEffect, useState } from "react";
+import Fuse from "fuse.js";
+import React, { useEffect, useMemo, useState } from "react";
 import { FiSearch, FiCheckCircle } from "react-icons/fi";
 import { carServicesAPI,bikeServicesAPI } from "../../DatA/Data";
 import { useSearchParams } from "next/navigation";
+import { FaCar, FaMotorcycle } from "react-icons/fa6";
 
 const CarServicePage = () => {
 
   
  const searchParams = useSearchParams();
 
-  const type = searchParams.get("type") || "car"; // default car
+const type = searchParams.get("type") || "car";
 
-  const [search, setSearch] = useState("");
-  const [activeCategory, setActiveCategory] = useState("all");
+const [search, setSearch] = useState("");
+const [activeCategory, setActiveCategory] = useState("all");
+const [active, setActive] = useState(type);
 
-  // choose API based on type
-  const servicesData =
-    type === "bike" ? bikeServicesAPI : carServicesAPI;
+// current data
+const currentServices =
+  active === "car" ? carServicesAPI : bikeServicesAPI;
 
-  // filter logic (safe)
-  const filteredData = servicesData
-    .filter((cat) =>
-      activeCategory === "all" ? true : cat.id === activeCategory
-    )
-    .map((cat) => ({...cat,services: (cat.services || []).filter((s) =>
-  s.name.toLowerCase().includes(search.toLowerCase())
-),}));
+// search term
+const searchTerm = search.trim();
+
+// STEP 1: flatten services (optimized)
+const allServices = useMemo(() => {
+  return currentServices.flatMap((cat) =>
+    (cat.services || []).map((service) => ({
+      ...service,
+      categoryId: cat.id,
+      categoryTitle: cat.title,
+      categoryCatagory: cat.catagory,
+    }))
+  );
+}, [currentServices]);
+
+// STEP 2: Fuse instance (optimized)
+const fuse = useMemo(() => {
+  return new Fuse(allServices, {
+    keys: ["name", "categoryTitle", "categoryCatagory"],
+    threshold: 0.4,
+  });
+}, [allServices]);
+
+// STEP 3: search result
+const searched = useMemo(() => {
+  return searchTerm
+    ? fuse.search(searchTerm).map((res) => res.item)
+    : allServices;
+}, [searchTerm, fuse, allServices]);
+
+// STEP 4: group back
+const grouped = useMemo(() => {
+  return currentServices
+    .map((cat) => ({
+      ...cat,
+      services: searched.filter((s) => s.categoryId === cat.id),
+    }))
+    .filter((cat) => cat.services.length > 0);
+}, [currentServices, searched]);
 
   return (
     <section className="min-h-screen  bg-[#05070d] text-white py-16">
@@ -35,7 +68,7 @@ const CarServicePage = () => {
       <div className="max-w-[1440px] p-5 md:p-0 mx-auto  text-center space-y-5">
 
         <h1 className="text-4xl md:text-5xl font-black uppercase">
-         {type === "bike"
+         {active === "bike"
           ? "Motorcycle Service Center"
           : "Car Service Center"}
         </h1>
@@ -69,7 +102,7 @@ const CarServicePage = () => {
             All
           </button>
 
-          {filteredData.map((cat) => (
+          {grouped.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
@@ -83,12 +116,42 @@ const CarServicePage = () => {
             </button>
           ))}
         </div>
-      </div>
 
+<div className="flex justify-end">
+        <div className="mt-6   border border-white/10 rounded-xl p-2">
+
+            <button
+              onClick={() => setActive("car")}
+              className={`px-6 py-2 rounded-lg text-xs font-bold uppercase transition ${
+                active === "car"
+                  ? "bg-orange-500 text-black"
+                  : "text-slate-400"
+              }`}
+            >
+              <FaCar className="inline mr-2" />
+              Car
+            </button>
+
+            <button
+              onClick={() => setActive("bike")}
+              className={`px-6 py-2 rounded-lg text-xs font-bold uppercase transition ${
+                active === "bike"
+                  ? "bg-orange-500 text-black"
+                  : "text-slate-400"
+              }`}
+            >
+             <FaMotorcycle className="inline mr-2" />
+              Bike
+            </button>
+
+          </div>
+          </div>
+      </div>
+ 
       {/* CONTENT */}
       <div className="max-w-360 mx-auto  mt-14 p-5 md:p-0 space-y-12">
 
-        {filteredData.map((category,index) => (
+        {grouped.map((category,index) => (
           <div key={index}>
 
             {/* CATEGORY TITLE */}
