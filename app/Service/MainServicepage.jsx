@@ -60,7 +60,10 @@ const grouped = useMemo(() => {
     }))
     .filter((cat) => cat.services.length > 0);
 }, [currentServices, searched]);
-
+const displayedCategories =
+  activeCategory === "all"
+    ? grouped
+    : grouped.filter((cat) => cat.id === activeCategory);
   return (
 <section className="min-h-screen bg-gradient-to-br from-[#07111F] via-[#0B1728] to-[#10213A] text-white py-16">
 
@@ -102,7 +105,7 @@ const grouped = useMemo(() => {
         All
       </button>
 
-      {grouped.map((cat) => (
+      {displayedCategories.map((cat) => (
         <button
           key={cat.id}
           onClick={() => setActiveCategory(cat.id)}
@@ -150,7 +153,7 @@ const grouped = useMemo(() => {
   </div>
 
   {/* CONTENT */}
-  <div className="max-w-7xl mx-auto mt-14 p-5 md:p-0 space-y-12">
+  <div className="max-w-360 mx-auto mt-14 p-5 md:p-0 space-y-12">
 
     {grouped.map((category, index) => (
       <div key={index} className="mb-10">

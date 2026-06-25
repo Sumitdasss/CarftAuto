@@ -629,225 +629,210 @@ export const mechanicsAPI = [
 
 
 export const carPartsAPI = [
- {
-  id: 1,
-  NameCatagory: "Engine-parts",
-  title: "Wholesale Price Kta19 Diesel Engine Parts 3088303 Motor Auto Cylinder Block for Cummins",
-  model: "KTA19",
-  image: "https://image.made-in-china.com/43f34j00GaDjeBHgCcbO/Wholesale-Price-Kta19-Diesel-Engine-Parts-3088303-Motor-Auto-Cylinder-Block-for-Cummins.webp",
+{
+    id: 1,
+    NameCatagory: "Engine-parts",
+    title: "Wholesale Price Kta19 Diesel Engine Parts 3088303 Motor Auto Cylinder Block for Cummins",
+    model: "KTA19",
+    image: "https://image.made-in-china.com/43f34j00GaDjeBHgCcbO/Wholesale-Price-Kta19-Diesel-Engine-Parts-3088303-Motor-Auto-Cylinder-Block-for-Cummins.webp",
 
-  type: "Engine Block",
-  company: "Cummins",
-  brand: "Cummins",
+    type: "Cylinder block",
+    partName: "cylinder block",
+    engineModel: "KTA19 KTA38",
+    engineType: "Diesel Engine",
+    fuel: "Diesel",
 
-  price: "US$2,650.00 - US$4,890.00",
-  customization: "Available",
+    price: 4990,
+    customization: "Available",
+    quality: "Brand New",
+    bodyMaterial: "iron",
+    material: "iron",
 
-  material: "Iron",
-  technics: "Casting",
+    warranty: "3 Months",
 
-  warranty: "12 Months",
-  afterSalesService: "Standard",
+    oeNumber: [
+      "3088303"
+    ],
 
-  oeNumber: [
-    "3803717",
-    "4060393",
-    "3064223",
-    "3800717"
-  ],
+    specification: "Standard",
+    origin: "china",
+    hsCode: "8409999100",
 
-  displacement: "10.8L",
+    moq: "1",
 
-  application: [
-    "Heavy Truck",
-    "Excavator",
-    "Generator"
-  ],
+    transportPackage: "Standard carton (on request)",
+    deliveryTime: "5-7 Days",
+    weight: "Standard",
 
-  layout: "Vertical Inline 6-Cylinder",
-  coolingSystem: "Water-Cooled 4-Stroke",
-
-  specification: "301kg",
-
-  origin: "China",
-
-  moq: "1 PCS",
-
-  transportPackage: "Wooden Box",
-
-  trademark: "Komotashi",
-
-  productionCapacity: "100 PCS/Month",
-
-  packageSize: {
-    length: "113cm",
-    width: "65cm",
-    height: "69cm"
+    leadTime: [
+      {
+        quantity: "1-2 Sets",
+        days: "15 Days"
+      },
+      {
+        quantity: "3-20 Sets",
+        days: "35 Days"
+      },
+      {
+        quantity: ">20 Sets",
+        days: "Negotiable"
+      }
+    ]
   },
-
-  packageGrossWeight: "315kg",
-
-  leadTime: [
-    {
-      quantity: "1-2 Sets",
-      days: "15 Days"
-    },
-    {
-      quantity: "3-20 Sets",
-      days: "35 Days"
-    },
-    {
-      quantity: ">20 Sets",
-      days: "Negotiable"
-    }
-  ]
-},
+ 
   {
-  id: 2,
-  NameCatagory: "Engine-parts",
-  title: "Factory Price New Cummins M11 Cylinder Block Diesel Engine Parts 10.8L Inline 6 OEM 3803717 4060393 for Heavy Truck Excavator Generator Motor",
-  model: "M11",
-  image: "https://image.made-in-china.com/43f34j00uEgSKsrIYeka/Factory-Price-New-Cummins-M11-Cylinder-Block-Diesel-Engine-Parts-10-8L-Inline-6-OEM-3803717-4060393-for-Heavy-Truck-Excavator-Generator-Motor.webp",
+    id: 2,
+    NameCatagory: "Engine-parts",
+    title: "Factory Price New Cummins M11 Cylinder Block Diesel Engine Parts 10.8L Inline 6 OEM 3803717 4060393 for Heavy Truck Excavator Generator Motor",
+    model: "M11",
+    image: "https://image.made-in-china.com/43f34j00uEgSKsrIYeka/Factory-Price-New-Cummins-M11-Cylinder-Block-Diesel-Engine-Parts-10-8L-Inline-6-OEM-3803717-4060393-for-Heavy-Truck-Excavator-Generator-Motor.webp",
 
-  type: "Engine Block",
-  company: "Cummins",
-  brand: "Cummins",
+    type: "Engine block",
+    company: "Cummins",
+    brand: "Cummins",
 
-  price: "US$2,650.00 - US$4,890.00",
-  customization: "Available",
+    price: 2000,
+    customization: "Available",
 
-  material: "Iron",
-  technics: "Casting",
+    material: "Iron",
+    technics: "Casting",
 
-  warranty: "12 Months",
-  afterSalesService: "Standard",
+    warranty: "12 Months",
+    afterSalesService: "Standard",
 
-  oeNumber: [
-    "3803717",
-    "4060393",
-    "3064223",
-    "3800717"
-  ],
+    oeNumber: [
+      "3803717",
+      "4060393",
+      "3064223",
+      "3800717"
+    ],
 
-  displacement: "10.8L",
+    displacement: "10.8L",
 
-  application: [
-    "Heavy Truck",
-    "Excavator",
-    "Generator"
-  ],
+    application: [
+      "Heavy Truck",
+      "Excavator",
+      "Generator"
+    ],
 
-  layout: "Vertical Inline 6-Cylinder",
-  coolingSystem: "Water-Cooled 4-Stroke",
+    layout: "Vertical Inline 6-Cylinder",
+    coolingSystem: "Water-Cooled 4-Stroke",
 
-  specification: "301kg",
+    specification: "301kg",
 
-  origin: "China",
+    origin: "China",
 
-  moq: "1 PCS",
+    moq: "1 PCS",
 
-  transportPackage: "Wooden Box",
+    transportPackage: "Wooden Box",
 
-  trademark: "Komotashi",
+    trademark: "Komotashi",
 
-  productionCapacity: "100 PCS/Month",
+    productionCapacity: "100 PCS/Month",
 
-  packageSize: {
-    length: "113cm",
-    width: "65cm",
-    height: "69cm"
+    packageSize: {
+      length: "113cm",
+      width: "65cm",
+      height: "69cm"
+    },
+
+    packageGrossWeight: "315kg",
+
+    leadTime: [
+      {
+        quantity: "1-2 Sets",
+        days: "15 Days"
+      },
+      {
+        quantity: "3-20 Sets",
+        days: "35 Days"
+      },
+      {
+        quantity: ">20 Sets",
+        days: "Negotiable"
+      }
+    ]
   },
 
-  packageGrossWeight: "315kg",
-
-  leadTime: [
-    {
-      quantity: "1-2 Sets",
-      days: "15 Days"
-    },
-    {
-      quantity: "3-20 Sets",
-      days: "35 Days"
-    },
-    {
-      quantity: ">20 Sets",
-      days: "Negotiable"
-    }
-  ]
-},
   {
-  id: 3,
-  NameCatagory: "Engine-parts",
-  title: "Factory Price K19 Kta19 Diesel Engine Spare Parts Cylinder Head Assy 3068401 3072438 3081070 3640321 3646324 3646323 3811985 Cylinder Head for Cummins",
-  model: "3646324 3811985 3811988 3068401 3072438 3081070",
-  image: "https://image.made-in-china.com/43f34j00nbBvhNYklQcM/Factory-Price-K19-Kta19-Diesel-Engine-Spare-Parts-Cylinder-Head-Assy-3068401-3072438-3081070-3640321-3646324-3646323-3811985-Cylinder-Head-for-Cummins.webp",
+    id: 3,
+    NameCatagory: "Engine-parts",
+    title: "Factory Price K19 Kta19 Diesel Engine Spare Parts Cylinder Head Assy 3068401 3072438 3081070 3640321 3646324 3646323 3811985 Cylinder Head for Cummins",
+    model: "3646324 3811985 3811988 3068401 3072438 3081070",
+    image: "https://image.made-in-china.com/43f34j00nbBvhNYklQcM/Factory-Price-K19-Kta19-Diesel-Engine-Spare-Parts-Cylinder-Head-Assy-3068401-3072438-3081070-3640321-3646324-3646323-3811985-Cylinder-Head-for-Cummins.webp",
 
-  type: "Cylinder Head ",
-  company: "Cummins",
-  brand: "Cummins",
+    type: "Cylinder Head",
+    partNumber: "3811985 4915442",
+    company: "Cummins",
+    brand: "Cummins",
+    trademark: "TuoHang",
 
-  price: "US$69.00-99.00",
-  customization: "Available",
+    price: 100,
+    customization: "Available",
+    feature: "100% Brand New",
 
-  material: "Iron",
-  technics: "Casting",
+    material: "Aluminum Alloy",
+    technics: "Casting",
 
-  warranty: "12 Months",
-  afterSalesService: "Standard",
+    warranty: "6months",
+    afterSalesService: "Standard",
+    installationMethod: "Fixed",
 
-  oeNumber: [
-    "3803717",
-    "4060393",
-    "3064223",
-    "3800717"
-  ],
+    oeNumber: [
+      "3803717",
+      "4060393",
+      "3064223",
+      "3800717"
+    ],
 
-  displacement: "10.8L",
+    displacement: "10.8L",
+    engineModel: "Kta19 Kta38 Kta50",
+    fuelType: "Diesel",
 
-  application: [
-    "Heavy Truck",
-    "Excavator",
-    "Generator"
-  ],
+    application: [
+      "Heavy Truck",
+      "Excavator",
+      "Generator"
+    ],
+    applicableIndustries: "Engineering Machinery, Construction Works",
 
-  layout: "Vertical Inline 6-Cylinder",
-  coolingSystem: "Water-Cooled 4-Stroke",
+    layout: "Vertical Inline 6-Cylinder",
+    coolingSystem: "Water-Cooled 4-Stroke",
 
-  specification: "301kg",
+    specification: "STD",
+    origin: "China",
+    hsCode: "8409999100",
 
-  origin: "China",
+    moq: "1 PCS",
+    inStock: "Avaliable",
+    shipment: "by Express/Air/Sea",
+    universalFitment: "Yes",
+    productionCapacity: "5000000/Year",
 
-  moq: "1 PCS",
+    transportPackage: "as Customer Request",
+    packageSize: {
+      length: "30.00cm",
+      width: "25.00cm",
+      height: "30.00cm"
+    },
+    packageGrossWeight: "20.000kg",
 
-  transportPackage: "Wooden Box",
-
-  trademark: "Komotashi",
-
-  productionCapacity: "100 PCS/Month",
-
-  packageSize: {
-    length: "113cm",
-    width: "65cm",
-    height: "69cm"
+    deliveryTime: "3-5 Working Days",
+    leadTime: [
+      {
+        quantity: "1-2 Sets",
+        days: "15 Days"
+      },
+      {
+        quantity: "3-20 Sets",
+        days: "35 Days"
+      },
+      {
+        quantity: ">20 Sets",
+        days: "Negotiable"
+      }
+    ]
   },
-
-  packageGrossWeight: "315kg",
-
-  leadTime: [
-    {
-      quantity: "1-2 Sets",
-      days: "15 Days"
-    },
-    {
-      quantity: "3-20 Sets",
-      days: "35 Days"
-    },
-    {
-      quantity: ">20 Sets",
-      days: "Negotiable"
-    }
-  ]
-},
   {
   id: 4,
   NameCatagory: "Engine-parts",
@@ -855,11 +840,11 @@ export const carPartsAPI = [
   model: "MC 07, MC 11, MC 13,51031006299 51031006410 510310",
   image: "https://image.made-in-china.com/43f34j00hBTcemMECvrp/Best-Price-Engine-Cylinder-Head-51031006299-51031006410-51031006427-51031006468-for-Man-Engine.webp",
 
-  type: "Cylinder Head ",
+  type: "Engine block",
   company: "Cummins",
   brand: "Cummins",
 
-  price: "US$1,100.00",
+  price: 1000,
   customization: "Available",
 
   material: "Iron",
@@ -921,79 +906,980 @@ export const carPartsAPI = [
     }
   ]
 },
+{
+    id: 5,
+    NameCatagory: "Engine-parts",
+    title: "Piston for Daihatsu Dk20/Dk20e/DC17/De18 Ship Marine Engine",
+    model: "P-FT031-00",
+    image: "https://image.made-in-china.com/43f34j00QbLoHJRmhPzi/Piston-for-Daihatsu-Dk20-Dk20e-DC17-De18-Ship-Marine-Engine.webp",
+
+    type: "Piston",
+    engineName: "N45 Engine",
+    company: "Daihatsu",
+    brand: "Daihatsu",
+    trademark: "Henweit",
+
+    price: 600,
+    customization: "Available",
+    quality: "OE Quality",
+    characters: "Alfin",
+    surface: "Graphite",
+
+    material: "Aluminum",
+    technics: "Casting",
+
+    warranty: "1 Year",
+    afterSalesService: "Standard",
+
+    oeNumber: [
+      "8094740",
+      "504208873",
+      "0102700",
+      "4026960",
+      "2855531",
+      "4089453"
+    ],
+
+    displacement: "10.8L",
+
+    application: [
+      "Heavy Truck",
+      "Excavator",
+      "Generator",
+      "Ship Marine Engine"
+    ],
+
+    layout: "Vertical Inline 6-Cylinder",
+    coolingSystem: "Water-Cooled 4-Stroke",
+
+    specification: "Standard",
+    origin: "China",
+
+    moq: "1 PCS",
+
+    transportPackage: "Henweit Packing",
+
+    productionCapacity: "350000 PCS Per Year",
+
+    packageSize: {
+      length: "113cm",
+      width: "65cm",
+      height: "69cm"
+    },
+
+    packageGrossWeight: "315kg",
+
+    leadTime: [
+      {
+        quantity: "1-2 Sets",
+        days: "15 Days"
+      },
+      {
+        quantity: "3-20 Sets",
+        days: "35 Days"
+      },
+      {
+        quantity: ">20 Sets",
+        days: "Negotiable"
+      }
+    ]
+  },
   {
-  id: 5,
-  NameCatagory: "Engine-parts",
-  title: "Best Price Engine Cylinder Head 51031006299 51031006410 51031006427 51031006468 for Man Engine",
-  model: "MC 07, MC 11, MC 13,51031006299 51031006410 510310",
-  image: "https://image.made-in-china.com/43f34j00hBTcemMECvrp/Best-Price-Engine-Cylinder-Head-51031006299-51031006410-51031006427-51031006468-for-Man-Engine.webp",
+    id: 6,
+    NameCatagory: "Engine-parts",
+    title: "40269600 Light Commercial Piston Kit and N45 Euro 5 Engine Rebuild OEM-Grade",
+    model: "P-FT031-00",
+    image: "https://image.made-in-china.com/43f34j00BiPCJHnUyMoS/40269600-Light-Commercial-Piston-Kit-and-N45-Euro-5-Engine-Rebuild-OEM-Grade.webp",
 
-  type: "Cylinder Head ",
-  company: "Cummins",
-  brand: "Cummins",
+    type: "Piston Kit",
+    engineName: "N45 Engine",
+    company: "Henweit",
+    brand: "Henweit",
+    trademark: "Henweit",
 
-  price: "US$1,100.00",
-  customization: "Available",
+    price: 110,
+    customization: "Available",
+    quality: "OE Quality",
+    characters: "Alfin",
+    surface: "Graphite",
 
-  material: "Iron",
-  technics: "Casting",
+    material: "Aluminum",
+    technics: "Casting",
 
-  warranty: "12 Months",
-  afterSalesService: "Standard",
+    warranty: "1 Year",
+    afterSalesService: "Standard",
 
-  oeNumber: [
-    "3803717",
-    "4060393",
-    "3064223",
-    "3800717"
-  ],
+    oeNumber: [
+      "8094740",
+      "504208873",
+      "0102700",
+      "4026960",
+      "2855531",
+      "4089453"
+    ],
 
-  displacement: "10.8L",
+    displacement: "10.8L",
 
-  application: [
-    "Heavy Truck",
-    "Excavator",
-    "Generator"
-  ],
+    application: [
+      "Light Commercial",
+      "Heavy Truck",
+      "Excavator",
+      "Generator"
+    ],
 
-  layout: "Vertical Inline 6-Cylinder",
-  coolingSystem: "Water-Cooled 4-Stroke",
+    layout: "Vertical Inline 6-Cylinder",
+    coolingSystem: "Water-Cooled 4-Stroke",
 
-  specification: "301kg",
+    specification: "Standard",
+    origin: "China",
 
-  origin: "China",
+    moq: "1 PCS",
 
-  moq: "1 PCS",
+    transportPackage: "Henweit Packing",
 
-  transportPackage: "Wooden Box",
+    productionCapacity: "350000 PCS Per Year",
 
-  trademark: "Komotashi",
+    packageSize: {
+      length: "113cm",
+      width: "65cm",
+      height: "69cm"
+    },
 
-  productionCapacity: "100 PCS/Month",
+    packageGrossWeight: "315kg",
 
-  packageSize: {
-    length: "113cm",
-    width: "65cm",
-    height: "69cm"
+    leadTime: [
+      {
+        quantity: "1-2 Sets",
+        days: "15 Days"
+      },
+      {
+        quantity: "3-20 Sets",
+        days: "35 Days"
+      },
+      {
+        quantity: ">20 Sets",
+        days: "Negotiable"
+      }
+    ]
   },
+{
+    id: 7,
+    NameCatagory: "Engine-parts",
+    title: "High Quality Component Npr Bronze Piston Ring in Various Types and Materials to Suit Each Application",
+    model: "Standard size or Customized Size",
+    image: "https://image.made-in-china.com/43f34j00ymuBcPiMwCok/High-Quality-Component-Npr-Bronze-Piston-Ring-in-Various-Types-and-Materials-to-Suit-Each-Application.webp",
 
-  packageGrossWeight: "315kg",
+    type: "Transmission piston ring",
+    company: "SJ",
+    brand: "SJ",
+    trademark: "SJ",
 
-  leadTime: [
-    {
-      quantity: "1-2 Sets",
-      days: "15 Days"
+    price: 20,
+    customization: "Available",
+    certification: "ISO9001",
+    color: "Black",
+    
+    pressure: "0~0.05Mpa",
+    temperature: "-35~220°C",
+
+    material: "Cast iron",
+    technics: "Casting",
+
+    warranty: "1 Year",
+    afterSalesService: "Standard",
+
+    oeNumber: [
+      "8094740",
+      "504208873",
+      "0102700",
+      "4026960",
+      "2855531",
+      "4089453"
+    ],
+
+    displacement: "10.8L",
+
+    application: [
+      "Any Excavator"
+    ],
+    relatedBrands: [
+      "Komatsu",
+      "Hitachi",
+      "Sumitomo",
+      "Doosan",
+      "Daewoo",
+      "Hyundai",
+      "Caterpillar",
+      "Volvo",
+      "Kato"
+    ],
+
+    layout: "Vertical Inline 6-Cylinder",
+    coolingSystem: "Water-Cooled 4-Stroke",
+
+    specification: "Standard",
+    origin: "China",
+
+    moq: "100PCS",
+
+    transportPackage: "SJ PACKING",
+    deliveryTime: "2-5 Days",
+
+    productionCapacity: "350000 PCS Per Year",
+
+    packageSize: {
+      length: "113cm",
+      width: "65cm",
+      height: "69cm"
     },
-    {
-      quantity: "3-20 Sets",
-      days: "35 Days"
-    },
-    {
-      quantity: ">20 Sets",
-      days: "Negotiable"
-    }
-  ]
-},
 
+    packageGrossWeight: "315kg",
+
+    leadTime: [
+      {
+        quantity: "1-2 Sets",
+        days: "15 Days"
+      },
+      {
+        quantity: "3-20 Sets",
+        days: "35 Days"
+      },
+      {
+        quantity: ">20 Sets",
+        days: "Negotiable"
+      }
+    ]
+  },
+{
+    id: 8,
+    NameCatagory: "Engine-parts",
+    title: "CTPR Piston Ring Suitable For VOLVO MD60 98.43mm 08-405500-10",
+    model: "Standard size or Customized Size",
+    image: "https://image.made-in-china.com/43f34j00SRhBcDgdlKpN/CTPR-Piston-Ring-Suitable-For-VOLVO-MD60-98-43mm-08-405500-10.webp",
+
+    type: "Oil-control Ring",
+    company: "CTPR",
+    brand: "CTPR",
+    trademark: "CTPR",
+
+    price: 20,
+    customization: "Custom Size / Design",
+    certification: "ISO 9001/CE",
+    surfaceTreatment: "Chrome",
+    performance: "Temperature resistance / Pressure Rating",
+
+    material: "Steel",
+    build: "Steel",
+    technics: "Casting",
+
+    warranty: "24 Months",
+    afterSalesService: "1 Year Gurantee",
+
+    oeNumber: [
+      "08-405500-10"
+    ],
+
+    displacement: "10.8L",
+    engineType: "Diesel",
+
+    application: [
+      "Excavator",
+      "Tractor",
+      "Truck",
+      "Car"
+    ],
+    category: [
+      "Automotive",
+      "Industrial",
+      "Motorcycle"
+    ],
+    relatedBrands: [
+      "Volvo"
+    ],
+
+    layout: "Vertical Inline 6-Cylinder",
+    coolingSystem: "Water-Cooled 4-Stroke",
+
+    specification: "2.385+3. 160+4.747",
+    origin: "Guangzhou, China",
+
+    moq: "100PCS",
+
+    transportPackage: "Paper Carton",
+    deliveryTime: "2-5 Days",
+
+    productionCapacity: "350000 PCS Per Year",
+
+    packageSize: {
+      length: "113cm",
+      width: "65cm",
+      height: "69cm"
+    },
+
+    packageGrossWeight: "315kg",
+
+    leadTime: [
+      {
+        quantity: "1-2 Sets",
+        days: "15 Days"
+      },
+      {
+        quantity: "3-20 Sets",
+        days: "35 Days"
+      },
+      {
+        quantity: ">20 Sets",
+        days: "Negotiable"
+      }
+    ]
+  },
+{
+    id: 9,
+    NameCatagory: "Engine-parts",
+    title: "Diesel Engine Parts Isde-6D6.7 Crankshaft OEM Number 4934862",
+    model: "ISDE-6D6.7",
+    image: "https://image.made-in-china.com/43f34j00aQqBMrtdaLkl/Diesel-Engine-Parts-Isde-6D6-7-Crankshaft-OEM-Number-4934862.webp",
+
+    type: "Crankshaft",
+    company: "CTPR",
+    brand: "CTPR",
+    trademark: "CTPR",
+
+    price: 280,
+    customization: "Custom Size / Design",
+    certification: "ISO 9001/CE",
+    surfaceTreatment: "Chrome",
+    performance: "Temperature resistance / Pressure Rating",
+
+    material: "Steel",
+    build: "Steel",
+    technics: "Casting",
+
+    warranty: "24 Months",
+    afterSalesService: "1 Year Gurantee",
+
+    oeNumber: [
+      "4934862",
+      "5301008",
+      "5301010",
+      "5301009"
+    ],
+
+    displacement: "6.7L",
+    engineType: "Diesel",
+
+    application: [
+      "Excavator",
+      "Tractor",
+      "Truck",
+      "Car"
+    ],
+    category: [
+      "Automotive",
+      "Industrial",
+      "Motorcycle"
+    ],
+    relatedBrands: [
+      "Volvo"
+    ],
+
+    layout: "Vertical Inline 6-Cylinder",
+    coolingSystem: "Water-Cooled 4-Stroke",
+
+    specification: "Standard",
+    origin: "Guangzhou, China",
+
+    moq: "100PCS",
+
+    transportPackage: "Paper Carton",
+    deliveryTime: "7-15 Days after Prepayment",
+
+    productionCapacity: "350000 PCS Per Year",
+
+    packageSize: {
+      length: "113cm",
+      width: "65cm",
+      height: "69cm"
+    },
+
+    packageGrossWeight: "315kg",
+
+    leadTime: [
+      {
+        quantity: "1-2 Sets",
+        days: "15 Days"
+      },
+      {
+        quantity: "3-20 Sets",
+        days: "35 Days"
+      },
+      {
+        quantity: ">20 Sets",
+        days: "Negotiable"
+      }
+    ]
+  },
+{
+    id: 10,
+    NameCatagory: "Engine-parts",
+    title: "Excellent quality Aftermarket Engine Spare Parts Crankshaft 3306 2W7458",
+    model: "3306",
+    image: "https://image.made-in-china.com/43f34j00AuNGdwRaETpm/Excellent-quality-Aftermarket-Engine-Spare-Parts-Crankshaft-3306-2W7458.webp",
+
+    type: "Crankshaft",
+    company: "DIRON",
+    brand: "DIRON",
+    trademark: "DIRON",
+
+    price: 130,
+    customization: "Custom Size / Design",
+    certification: "ISO 9001/CE",
+    surfaceTreatment: "Chrome",
+    performance: "Temperature resistance / Pressure Rating",
+
+    material: "Iron",
+    build: "Iron",
+    technics: "Casting",
+
+    warranty: "24 Months",
+    afterSalesService: "1 Year Gurantee",
+
+    oeNumber: [
+      "2W7458"
+    ],
+
+    displacement: "6.7L",
+    engineType: "Diesel",
+
+    application: [
+      "Excavator",
+      "Tractor",
+      "Truck",
+      "Car"
+    ],
+    category: [
+      "Automotive",
+      "Industrial",
+      "Motorcycle"
+    ],
+    relatedBrands: [
+      "Caterpillar"
+    ],
+
+    layout: "Vertical Inline 6-Cylinder",
+    coolingSystem: "Water-Cooled 4-Stroke",
+
+    specification: "Standard",
+    origin: "Henan",
+    hsCode: "84099991",
+
+    moq: "100PCS",
+
+    transportPackage: "Wooden Box",
+    deliveryTime: "7-15 Days after Prepayment",
+
+    productionCapacity: "5000PCS/Year",
+
+    packageSize: {
+      length: "113cm",
+      width: "65cm",
+      height: "69cm"
+    },
+
+    packageGrossWeight: "315kg",
+
+    leadTime: [
+      {
+        quantity: "1-2 Sets",
+        days: "15 Days"
+      },
+      {
+        quantity: "3-20 Sets",
+        days: "35 Days"
+      },
+      {
+        quantity: ">20 Sets",
+        days: "Negotiable"
+      }
+    ]
+  },
+{
+    id: 11,
+    NameCatagory: "Engine-parts",
+    title: "Heavy Duty OEM Quality Diesel Gasoline High Precision Automotive Turbo Engine Auto Camshaft 24100-27000",
+    model: "24100-27000",
+    image: "https://image.made-in-china.com/43f34j00QmMBKFgzSkos/Heavy-Duty-OEM-Quality-Diesel-Gasoline-High-Precision-Automotive-Turbo-Engine-Auto-Camshaft-24100-27000.webp",
+
+    type: "Camshaft",
+    company: "Hyundai/Kia", // Based on the standard 24100-27000 2.0 Crdi part number pattern
+    brand: "Original Standard",
+    trademark: "OEM Available",
+
+    price: 15,
+    customization: "Custom Size / Design",
+    precision: "High Precision",
+    quality: "Original Standard",
+
+    material: "Steel",
+    technics: "Casting / Forging + CNC Machining",
+
+    warranty: "24 Months",
+    afterSalesService: "1 Year Gurantee",
+
+    oeNumber: [
+      "24100-27000"
+    ],
+
+    displacement: "2.0L",
+    engineModel: "2.0 Crdi Diesel Engine",
+    engineType: "Diesel / Gasoline",
+
+    application: [
+      "Engine Valve Train Parts",
+      "Automotive"
+    ],
+    category: [
+      "Automotive"
+    ],
+
+    layout: "Vertical Inline 4-Cylinder", // Typical layout for 2.0 Crdi engines
+    specification: "standard",
+    origin: "China",
+    hsCode: "8409992000",
+
+    moq: "1 PCS",
+
+    transportPackage: "Carton, Wooden Case, Pallet According to Customer's",
+    deliveryTime: "7-15 Days after Prepayment",
+
+    productionCapacity: "1000PCS Per Month",
+
+    packageSize: {
+      length: "40.00cm",
+      width: "10.00cm",
+      height: "10.00cm"
+    },
+
+    packageGrossWeight: "7.000kg",
+
+    leadTime: [
+      {
+        quantity: "1-1 Pieces",
+        days: "15 Days"
+      },
+      {
+        quantity: ">1 Pieces",
+        days: "To be negotiated"
+      }
+    ]
+  },
+{
+    id: 12,
+    NameCatagory: "Engine-parts",
+    title: "Brand New Car Spare Parts Auto Camshaft for Peugeot 405 309 205",
+    model: "0801. N2",
+    image: "https://image.made-in-china.com/43f34j00DFvlUZcWkjRJ/Brand-New-Car-Spare-Parts-Auto-Camshaft-for-Peugeot-405-309-205.webp",
+
+    type: "Camshaft",
+    company: "Peugeot/Citroen", 
+    brand: "OEM Standard",
+    trademark: "Neutral/Customized",
+
+    price: 509,
+    customization: "Custom Size / Design",
+    condition: "100%New",
+    quality: "OEM Standard",
+
+    material: "Steel",
+    technics: "Casting / Forging + CNC Machining",
+
+    warranty: "24 Months",
+    afterSalesService: "1 Year Gurantee",
+
+    oeNumber: [
+      "0801n2",
+      "93091000",
+      "Cp15009"
+    ],
+
+    engineCode: [
+      "B2a",
+      "Bfz",
+      "Bdy"
+    ],
+    engineNumber: "K9K",
+
+    application: [
+      "Engine Valve Train Parts",
+      "Automotive"
+    ],
+    applicableModels: [
+      "For PEUGEOT",
+      "For CITROEN BX VISA ZX"
+    ],
+    category: [
+      "Automotive"
+    ],
+    relatedBrands: [
+      "Peugeot",
+      "Citroen"
+    ],
+
+    specification: "OEM Standard",
+    origin: "China",
+
+    moq: "1 PCS",
+
+    transportPackage: "Carton",
+    deliveryTime: "7-15 Days after Prepayment",
+
+    productionCapacity: "50000 Pieces Per Month",
+
+    packageSize: {
+      length: "40.00cm",
+      width: "5.00cm",
+      height: "5.00cm"
+    },
+
+    packageGrossWeight: "1.000kg",
+
+    leadTime: [
+      {
+        quantity: "1-1 Pieces",
+        days: "15 Days"
+      },
+      {
+        quantity: ">1 Pieces",
+        days: "To be negotiated"
+      }
+    ]
+  },
+{
+    id: 13,
+    NameCatagory: "Engine-parts",
+    title: "High Performance 1 0-1 5L Automobile Silent Transfer Case Engine Timing Chain Kits for Motorcycle Parts",
+    model: "SC3-9-0",
+    image: "https://image.made-in-china.com/43f34j00esMvlJyEMuoP/High-Performance-1-0-1-5L-Automobile-Silent-Transfer-Case-Engine-Timing-Chain-Kits-for-Motorcycle-Parts.webp",
+
+    type: "Camshaft",
+    company: "Peugeot/Citroen", 
+    brand: "OEM Standard",
+    trademark: "Neutral/Customized",
+
+    price: 35,
+    customization: "Custom Size / Design",
+    condition: "100%New",
+    quality: "OEM Standard",
+
+    material: "Steel",
+    technics: "Casting / Forging + CNC Machining",
+
+    warranty: "24 Months",
+    afterSalesService: "1 Year Gurantee",
+
+    oeNumber: [
+      "0801n2",
+      "93091000",
+      "Cp15009"
+    ],
+
+    engineCode: [
+      "B2a",
+      "Bfz",
+      "Bdy"
+    ],
+    engineNumber: "K9K",
+
+    application: [
+      "Conveyer Equipment",
+      "Packaging Machinery",
+      "Electric Cars",
+      "Motorcycle",
+      "Agricultural Machinery",
+      "Car",
+      "Automobile",
+    ],
+    applicableModels: [
+      "For PEUGEOT",
+      "For CITROEN BX VISA ZX"
+    ],
+    category: [
+      "Automotive"
+    ],
+    relatedBrands: [
+      "Peugeot",
+      "Citroen"
+    ],
+
+    specification: "OEM Standard",
+    origin: "China",
+
+    moq: "1 PCS",
+
+    transportPackage: "Carton",
+    deliveryTime: "7-15 Days after Prepayment",
+
+    productionCapacity: "50000 Pieces Per Month",
+
+    packageSize: {
+      length: "40.00cm",
+      width: "5.00cm",
+      height: "5.00cm"
+    },
+
+    packageGrossWeight: "1.000kg",
+
+    leadTime: [
+      {
+        quantity: "1-1 Pieces",
+        days: "15 Days"
+      },
+      {
+        quantity: ">1 Pieces",
+        days: "To be negotiated"
+      }
+    ]
+  },
+{
+    id: 14,
+    NameCatagory: "Engine-parts",
+    title: "High Performance 1 0-1 5L Automobile Silent Transfer Case Engine Timing Chain Kits for Motorcycle Parts",
+    model: "SC3-9-0",
+    image: "https://image.made-in-china.com/43f34j00esMvlJyEMuoP/High-Performance-1-0-1-5L-Automobile-Silent-Transfer-Case-Engine-Timing-Chain-Kits-for-Motorcycle-Parts.webp",
+
+    type: "Timing Chain",
+    company: "Peugeot/Citroen", 
+    brand: "OEM Standard",
+    trademark: "Neutral/Customized",
+
+    price: 60,
+    customization: "Custom Size / Design",
+    condition: "100%New",
+    quality: "OEM Standard",
+
+    material: "Steel",
+    technics: "Casting / Forging + CNC Machining",
+
+    warranty: "24 Months",
+    afterSalesService: "1 Year Gurantee",
+
+    oeNumber: [
+      "0801n2",
+      "93091000",
+      "Cp15009"
+    ],
+
+    engineCode: [
+      "B2a",
+      "Bfz",
+      "Bdy"
+    ],
+    engineNumber: "K9K",
+
+    application: [
+      "Conveyer Equipment",
+      "Packaging Machinery",
+      "Electric Cars",
+      "Motorcycle",
+      "Agricultural Machinery",
+      "Car",
+      "Automobile",
+    ],
+    applicableModels: [
+      "For PEUGEOT",
+      "For CITROEN BX VISA ZX"
+    ],
+    category: [
+      "Automotive"
+    ],
+    relatedBrands: [
+      "Peugeot",
+      "Citroen"
+    ],
+
+    specification: "OEM Standard",
+    origin: "China",
+
+    moq: "1 PCS",
+
+    transportPackage: "Carton",
+    deliveryTime: "7-15 Days after Prepayment",
+
+    productionCapacity: "50000 Pieces Per Month",
+
+    packageSize: {
+      length: "40.00cm",
+      width: "5.00cm",
+      height: "5.00cm"
+    },
+
+    packageGrossWeight: "1.000kg",
+
+    leadTime: [
+      {
+        quantity: "1-1 Pieces",
+        days: "15 Days"
+      },
+      {
+        quantity: ">1 Pieces",
+        days: "To be negotiated"
+      }
+    ]
+  },
+{
+    id: 15,
+    NameCatagory: "Engine-parts",
+    title: "Rubber Industrial Timing Belt Htd Std",
+    model: "MXL XL L H XH XXH T2.5 T5 T10 T20 2M 3M 5M 8M",
+    image: "https://image.made-in-china.com/43f34j00sENYUrycCbki/Rubber-Industrial-Timing-Belt-Htd-Std.webp",
+
+    type: "Toothed Belt / Timing Belt",
+    company: "CNFULO",
+    brand: "CNFULO",
+    trademark: "CNFULO",
+
+    price: 80,
+    customization: "Custom Size / Design",
+    condition: "100%New",
+    features: [
+      "Flame-Retardant",
+      "Anti-Static",
+      "Oil-Distributed",
+      "Cold-Resistant",
+      "Corrosion-Resistant",
+      "Heat-Resistant",
+      "Alkali-Resistant",
+      "Skid-Resistance",
+      "Wear-Resistant",
+      "Acid-Resistant",
+      "High Temperature-Resistance"
+    ],
+    materialFeature: "Heat Oil Cold Fire Resistant",
+
+    material: "Rubber",
+    structure: "Roller Chain",
+    detachableChainType: "Joe Buried Conveyor Chains",
+
+    warranty: "24 Months",
+    afterSalesService: "1 Year Gurantee",
+
+    oeNumber: [],
+
+    application: [
+      "Transmission Chain",
+      "Transpor",
+      "Conveyer Equipment",
+      "Packaging Machinery",
+      "Electric Cars",
+      "Motorcycle",
+      "Agricultural Machinery",
+      "Car",
+      "Automobile"
+    ],
+
+    specification: "Complete",
+    origin: "Zhejiang",
+    hsCode: "40103500",
+
+    moq: "1 PCS",
+
+    transportPackage: "Carton",
+    deliveryTime: "7-15 Days after Prepayment",
+
+    productionCapacity: "10 million PCS/Year",
+
+    packageSize: {
+      length: "450.00cm",
+      width: "350.00cm",
+      height: "250.00cm"
+    },
+
+    packageGrossWeight: "1.000kg",
+
+    leadTime: [
+      {
+        quantity: "1-1 Pieces",
+        days: "15 Days"
+      },
+      {
+        quantity: ">1 Pieces",
+        days: "To be negotiated"
+      }
+    ]
+  },
+{
+    id: 16,
+    NameCatagory: "Engine-parts",
+    title: "Durable Engine Torque Strut Mount for Mitsubishi Outlander Mn101572",
+    model: "MN101572",
+    image: "https://image.made-in-china.com/43f34j00pyztWuhrqYqk/Durable-Engine-Torque-Strut-Mount-for-Mitsubishi-Outlander-Mn101572.webp",
+
+    type: "Engine Mount / Torque Strut Mount",
+    component: "Upper Junction Plate",
+    company: "MNK",
+    brand: "MNK",
+    trademark: "MNK",
+
+    price: 65,
+    customization: "Custom Size / Design",
+    condition: "100%New",
+    certification: "SGS",
+    color: "Black",
+
+    bodyMaterial: "Steel",
+    shockReducingRubberMaterial: "NR",
+    material: "Iron and Rubber",
+
+    warranty: "24 Months",
+    afterSalesService: "1 Year Gurantee",
+
+    oeNumber: [
+      "MN101572"
+    ],
+
+    applicableModels: [
+      "Mitsubishi Outlander",
+      "Mitsubishi Lancer",
+      "Mitsubishi Galant",
+      "Mitsubishi Asx"
+    ],
+    category: [
+      "Automotive"
+    ],
+    relatedBrands: [
+      "Mitsubishi"
+    ],
+
+    specification: "SGS",
+    size: "Standard",
+    origin: "China",
+    hsCode: "87089999",
+
+    moq: "1 PCS",
+
+    transportPackage: "Neutral Plastic Bag and Neutral Outer Carton",
+    deliveryTime: "7-15 Days after Prepayment",
+
+    productionCapacity: "50000PCS/Year",
+
+    packageSize: {
+      length: "450.00cm",
+      width: "350.00cm",
+      height: "250.00cm"
+    },
+
+    packageGrossWeight: "1.000kg",
+
+    leadTime: [
+      {
+        quantity: "1-1 Pieces",
+        days: "15 Days"
+      },
+      {
+        quantity: ">1 Pieces",
+        days: "To be negotiated"
+      }
+    ]
+  }
 
 ];

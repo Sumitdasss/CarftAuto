@@ -3,13 +3,14 @@
 import  { useState } from 'react';
 import { FiSearch, FiHeart, FiShoppingCart, FiUser, FiMenu, FiX, FiCalendar } from 'react-icons/fi';
 import { FaChevronDown } from 'react-icons/fa6';
-
+import Link from 'next/link';
+import  useStore  from './Componant/Layout/Store/store';
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileMenuOpen2, setIsMobileMenuOpen2] = useState(false);
  // Demo state for items in cart
-
- 
+const {cart}=useStore()
+ const totalItems = cart.length;
 
   return (
      <>
@@ -45,10 +46,11 @@ const Header = () => {
             <a href="/Service?type=bike" onClick={() => setIsMobileMenuOpen(false)} className="block rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 hover:text-orange-500 transition-colors">
               Bike Services
             </a>
-            <a href="#" className="block rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 hover:text-orange-500 transition-colors">
+                <Link href={"/Shop"}>
+            <button onClick={() => setIsMobileMenuOpen(false)}  className="block rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 hover:text-orange-500 transition-colors">
               Shop (Parts)
-            </a>
-
+            </button>
+  </Link>
             {/* Gallery Dropdown */}
             <div className="w-full">
               <button
@@ -81,10 +83,16 @@ const Header = () => {
                 <FiHeart className="h-4 w-4" />
                 <span>Wishlist</span>
               </button>
-              <button className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-orange-500/20 active:scale-[0.98] transition-transform">
+   <Link href={"/Cart"} className='relative'>
+              <button className="flex  w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-orange-500/20 active:scale-[0.98] transition-transform">
                 <FiShoppingCart className="h-4 w-4" />
                 <span>Cart</span>
+
               </button>
+              <span className="absolute -top-1 z-30 -right-1 flex items-center justify-center min-w-[18px] h-[18px] rounded-full bg-red-600 text-white text-[10px] font-bold">
+                {totalItems}
+              </span>
+              </Link> 
             </div>
           </div>
 
@@ -134,9 +142,9 @@ const Header = () => {
                   <a href="/Service?type=bike" className="block rounded-lg px-4 py-2 text-slate-300 hover:bg-white/5 hover:text-orange-500 transition-all">Motorcycle Repair</a>
                 </div>
               </div>
-
-              <a href="#" className="text-slate-300 hover:text-red-500 transition-colors duration-200">Shop (Parts)</a>
-
+    <Link href={"/Shop"}>
+              <button className="text-slate-300 hover:text-red-500 transition-colors duration-200">Shop (Parts)</button>
+  </Link>
               <div className="relative group/menu cursor-pointer py-2">
                 <span className="flex hover:text-red-500 items-center gap-1.5 text-slate-300 transition-colors duration-200">
                   Gallery <FaChevronDown className="text-[10px] group-hover/menu:rotate-180 transition-transform duration-300" />
@@ -156,14 +164,20 @@ const Header = () => {
               <button className="relative p-2 hidden md:block text-slate-400 hover:text-white transition-all duration-200 hover:scale-105">
                 <FiHeart className="h-5 w-5" />
               </button>
+              <Link href={"/Cart"} className='relative'>
               <button className="relative hidden md:block p-2 text-slate-400 hover:text-white transition-all duration-200 hover:scale-105">
                 <FiShoppingCart className="h-5 w-5" />
               </button>
+             <span className="absolute hidden  md:block -top-1 z-30 -right-1    min-w-[18px] h-[18px] rounded-full bg-red-600 text-white text-[10px] font-bold">
+               <p className='flex items-center justify-center'>{totalItems}</p> 
+              </span>
+          </Link>
               <button className="group relative hidden md:flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-orange-600 to-amber-500 text-black font-bold overflow-hidden hover:scale-[1.03] transition">
                 <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition" />
                 <FiCalendar className="relative z-10" />
                 <span className="relative z-10 uppercase tracking-wide">Book Service</span>
               </button>
+            
 
               {/* Mobile Hamburger */}
               <button

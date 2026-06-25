@@ -9,6 +9,7 @@ import { carPartsAPI } from "../../../DatA/Data";
 // Swiper Styles Import (Next.js-এ এগুলো ইমপোর্ট করা জরুরি)
 import 'swiper/css';
 import 'swiper/css/navigation';
+import Link from 'next/link';
 
 const ProductSlider = () => {
   return (
@@ -92,10 +93,12 @@ const ProductSlider = () => {
 
     {/* ⚡ Action Buttons */}
     <div className="grid grid-cols-2 gap-3 mt-5">
-      <button className="py-3 rounded-xl bg-white/5 border border-white/10 text-slate-300 font-semibold text-xs uppercase tracking-wider hover:bg-white/10 hover:text-white transition-all duration-300">
-        View
-      </button>
-
+      <Link
+  href={`/DitailPage/${item.id}`}
+  className="py-3 px-4 rounded-xl bg-white/5 border border-white/10 text-slate-300 font-semibold text-xs uppercase tracking-wider hover:bg-white/10 hover:text-white transition-all duration-300 inline-flex justify-center items-center z-50 relative"
+>
+  View
+</Link>
       <button className="py-3 flex items-center justify-center gap-1.5 rounded-xl text-slate-950 font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-teal-500/10"
         style={{ background: "linear-gradient(135deg, #0d9488, #0891b2)" }}
       >
