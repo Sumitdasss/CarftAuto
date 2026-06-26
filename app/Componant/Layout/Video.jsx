@@ -1,10 +1,23 @@
 import React from "react";
 import { FiCalendar, FiCpu, FiPhoneCall } from "react-icons/fi";
-
+import   SplashCursor from './Mousanimation'
 const HeroBanner = () => {
   return (
  <section className="relative min-h-screen lg:h-screen w-full overflow-hidden bg-[#07111F] text-white">
+import SplashCursor from './SplashCursor'
 
+<SplashCursor
+  DENSITY_DISSIPATION={3.5}
+  VELOCITY_DISSIPATION={0.5}
+  PRESSURE={0.1}
+  CURL={3}
+  SPLAT_RADIUS={0.2}
+  SPLAT_FORCE={7000}
+  COLOR_UPDATE_SPEED={10}
+  SHADING
+  RAINBOW_MODE={false}
+  COLOR="#082F49"
+/>
   {/* 🎥 Background Video */}
   <div className="absolute inset-0 z-0">
     <video

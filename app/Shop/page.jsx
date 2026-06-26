@@ -4,6 +4,7 @@ import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import { carPartsAPI } from "../../DatA/Data";
 import useStore from "../Componant/Layout/Store/store";
+import ElectricBorder from "../Componant/Layout/ElectricBorder"
 export default function ShopPage() {
     const {addTocart}=useStore()
   const [search, setSearch] = useState("");
@@ -234,8 +235,21 @@ const filteredProducts = useMemo(() => {
               <>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                   {paginatedProducts.map((product) => (
+                    <ElectricBorder
+
+key={product.id}
+
+color="#7df9ff"
+
+speed={1}
+
+chaos={0.12}
+
+borderRadius={24}
+
+>
                     <div
-                      key={product.id}
+                    
                       className="group bg-slate-800 border border-slate-600 hover:border-violet-500/70 rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/10"
                     >
                       <div className="relative h-60 bg-slate-900 flex items-center justify-center overflow-hidden p-4">
@@ -283,6 +297,7 @@ const filteredProducts = useMemo(() => {
                         </div>
                       </div>
                     </div>
+                    </ElectricBorder>
                   ))}
                 </div>
 

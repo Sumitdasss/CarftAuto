@@ -35,7 +35,9 @@ const useStore = create(
             cart: [...state.cart, { ...product, quantity: 1 }],
           };
         }),
-
+ clearCart:()=>set({
+   cart:[]
+ }),
       addToWishlist: (product) =>
         set((state) => {
           const exist = state.wishlist.find(

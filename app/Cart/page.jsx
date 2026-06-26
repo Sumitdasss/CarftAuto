@@ -15,7 +15,7 @@ const Cartpage = () => {
 
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,_#0f4c75,_#081c2c,_#020617,_#000000)] text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-360 mx-auto px-4 sm:px-6">
         
         {/* Header */}
         <div className="mb-10 flex justify-between items-end">
@@ -86,7 +86,7 @@ const Cartpage = () => {
                         {item.model && <p>Model: {item.model}</p>}
                         {item.fuel && <p>Fuel: {item.fuel}</p>}
                       </div>
-
+<h2 className="pt-2 text-[20px] text-white font-medium ">{item.title}</h2>
                       {/* Quantity Controls */}
                       <div className="mt-auto flex flex-wrap items-center justify-between gap-4 pt-6">
                         <div className="flex items-center gap-2">
@@ -163,15 +163,15 @@ const Cartpage = () => {
                   </div>
                 </div>
 
-                <div className="mt-8 space-y-4">
+                <div className="mt-8 ">
                   <Link href="/checkout">
                     <button className="w-full py-4 bg-gradient-to-r from-red-500 to-rose-600 rounded-2xl font-semibold text-lg hover:brightness-110 transition">
                       Proceed to Checkout
                     </button>
                   </Link>
 
-                  <Link href="/Shop">
-                    <button className="w-full py-4 border border-white/20 hover:bg-white/5 rounded-2xl font-medium transition">
+                  <Link  href="/Shop">
+                    <button className="w-full mt-4 py-4 border border-white/20 hover:bg-white/5 rounded-2xl font-medium transition">
                       Continue Shopping
                     </button>
                   </Link>
