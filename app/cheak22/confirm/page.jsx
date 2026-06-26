@@ -187,7 +187,7 @@ export default function Confirm() {
               </div>
 
               <div className="mt-8">
-<Link href="/checkout/success">
+<Link href="/cheak22/success">
                 <button
                   onClick={handleConfirmOrder}
                   className="w-full py-5 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-3xl font-bold text-xl hover:scale-105 transition-all duration-300 shadow-xl shadow-emerald-500/30 flex items-center justify-center gap-3 group"

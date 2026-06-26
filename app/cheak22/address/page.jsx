@@ -212,7 +212,7 @@ export default function Address() {
                     <FiArrowLeft /> Back to Cart
                   </button>
                 </Link>
-
+<Link href={"/cheak22/payment"}>
                 <button
                   type="submit"
                   className="flex-1 py-4 bg-gradient-to-r from-red-500 to-orange-500 rounded-2xl font-bold text-lg hover:scale-105 transition shadow-lg shadow-red-500/30 flex items-center justify-center gap-3 group"
@@ -220,6 +220,7 @@ export default function Address() {
                   Continue to Payment
                   <FiArrowRight className="group-hover:translate-x-1 transition" />
                 </button>
+                </Link>
               </div>
             </form>
           </div>

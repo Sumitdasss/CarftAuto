@@ -161,7 +161,7 @@ export default function Checkout() {
                 </div>
 
                 <button
-              onClick={() => router.push("/checkout/address")}
+              onClick={() => router.push("/cheak22/address")}
                   className="group mt-8 w-full flex items-center justify-center gap-3 py-4 rounded-2xl bg-gradient-to-r from-red-500 to-orange-500 font-bold text-lg hover:scale-105 transition shadow-lg shadow-red-500/30"
                 >
                   Continue
