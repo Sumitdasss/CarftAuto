@@ -164,7 +164,7 @@ const Cartpage = () => {
                 </div>
 
                 <div className="mt-8 ">
-                  <Link href="/checkout">
+                  <Link href="/cheak22">
                     <button className="w-full py-4 bg-gradient-to-r from-red-500 to-rose-600 rounded-2xl font-semibold text-lg hover:brightness-110 transition">
                       Proceed to Checkout
                     </button>

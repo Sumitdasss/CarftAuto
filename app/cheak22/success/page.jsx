@@ -73,22 +73,26 @@ export default function Success() {
         </div>
 
         {/* Action Buttons */}
-        <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/orders" className="flex-1 max-w-xs mx-auto sm:mx-0">
-            <button onClick={clearCart} className="w-full py-5 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-3xl font-bold text-lg flex items-center justify-center gap-3 hover:scale-105 transition-all group">
-              <FiPackage />
-              Track Your Order
-              <FiArrowRight className="group-hover:translate-x-1 transition" />
-            </button>
-          </Link>
+      <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+  
+  <button
+    onClick={() => { clearCart(); router.push('/orders'); }}
+    className="flex-1 max-w-xs py-5 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-3xl font-bold text-lg flex items-center justify-center gap-3 hover:scale-105 transition-all group"
+  >
+    <FiPackage />
+    Track Your Order
+    <FiArrowRight className="group-hover:translate-x-1 transition" />
+  </button>
 
-          <Link href="/Shop" className="flex-1 max-w-xs mx-auto sm:mx-0">
-            <button onClick={clearCart} className="w-full py-5 border border-white/20 hover:bg-white/5 rounded-3xl font-medium text-lg transition flex items-center justify-center gap-3">
-              <FiShoppingCart />
-              Continue Shopping
-            </button>
-          </Link>
-        </div>
+  <button
+    onClick={() => { clearCart(); router.push('/Shop'); }}
+    className="flex-1 max-w-xs py-5 border border-white/20 hover:bg-white/5 rounded-3xl font-medium text-lg transition flex items-center justify-center gap-3"
+  >
+    <FiShoppingCart />
+    Continue Shopping
+  </button>
+
+</div>
 
         {/* Extra Options */}
         <div className="mt-8">

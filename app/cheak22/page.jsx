@@ -32,7 +32,7 @@ export default function Checkout() {
     { title: "Done", icon: <FiCheck /> },
   ];
 
-  const currentStep = 0; 
+  const currentStep = 0;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#020617] via-[#082f49] to-black text-white py-16">
@@ -168,11 +168,12 @@ export default function Checkout() {
                   <FiArrowRight className="group-hover:translate-x-2 transition" />
                 </button>
 
-                <Link href="/Shop">
-                  <button className="w-full mt-4 py-4 border border-white/20 hover:bg-white/5 rounded-2xl font-medium transition">
-                    Continue Shopping
-                  </button>
-                </Link>
+               <button 
+  onClick={() => router.push('/Shop')}
+  className="mt-10 px-10 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl font-semibold hover:scale-105 transition"
+>
+  Continue Shopping
+</button>
               </div>
             </div>
           )}
