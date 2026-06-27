@@ -16,7 +16,8 @@ import {
 } from "react-icons/fi";
 
 export default function Checkout() {
-  const { cart, increasePopulation, decreasePopulation, removeFromCart } = useStore();
+  const { cart, increasePopulation,clearCart, decreasePopulation, removeFromCart } = useStore();
+  
   const router = useRouter();
 
   const total = cart.reduce(
@@ -161,7 +162,7 @@ export default function Checkout() {
                 </div>
 
                 <button
-              onClick={() => router.push("/cheak22/address")}
+              onClick={() =>{clearCart(); router.push("/cheak22/address")}}
                   className="group mt-8 w-full flex items-center justify-center gap-3 py-4 rounded-2xl bg-gradient-to-r from-red-500 to-orange-500 font-bold text-lg hover:scale-105 transition shadow-lg shadow-red-500/30"
                 >
                   Continue
@@ -169,7 +170,7 @@ export default function Checkout() {
                 </button>
 
                <button 
-  onClick={() => router.push('/Shop')}
+  onClick={() => { clearCart(); router.push('/orders'); }}
   className="mt-10 px-10 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl font-semibold hover:scale-105 transition"
 >
   Continue Shopping

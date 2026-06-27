@@ -156,7 +156,7 @@ const displayedCategories =
   {/* CONTENT */}
   <div className="max-w-360 mx-auto mt-14 p-5 md:p-0 space-y-12">
 
-    {grouped.map((category, index) => (
+    {displayedCategories.map((category, index) => (
       <div key={index} className="mb-10">
 
         <h2 className="text-xl md:text-2xl font-bold uppercase text-cyan-400 mb-6">

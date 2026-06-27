@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from 'next/navigation';
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import {
@@ -12,6 +12,7 @@ import {
 import useStore from "../../Componant/Layout/Store/store";
 
 export default function Success() {
+  const router = useRouter();
   const { cart, clearCart } = useStore(); // Uncomment clearCart if you have it in store
   const [orderNumber] = useState(`ORD-${Math.floor(100000 + Math.random() * 900000)}`);
 
