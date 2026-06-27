@@ -5,6 +5,7 @@ import { FiSearch, FiCheckCircle } from "react-icons/fi";
 import { carServicesAPI,bikeServicesAPI } from "../../DatA/Data";
 import { useSearchParams } from "next/navigation";
 import { FaCar, FaMotorcycle } from "react-icons/fa6";
+import Link from "next/link";
 
 const CarServicePage = () => {
 
@@ -200,13 +201,13 @@ const displayedCategories =
                 </div>
 
                 <div className="h-[2px] w-0 group-hover:w-full bg-gradient-to-r from-cyan-400 via-blue-500 to-transparent transition-all duration-500" />
-
+<Link href={"/Booking"}>
                 <button
                   className="mt-5 w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-bold uppercase tracking-wider hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300"
                 >
                   Book Service
                 </button>
-
+</Link>
               </div>
 
             </div>

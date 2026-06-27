@@ -13,6 +13,7 @@ import {
   FiCheckCircle,
 } from "react-icons/fi";
 import { FaCar, FaMotorcycle } from "react-icons/fa6";
+import Link from "next/link";
 
 const CoreServices = () => {
   const [activeTab, setActiveTab] = useState("car");
@@ -172,10 +173,12 @@ const currentServices =
       </ul>
 
       {/* Button */}
+      <Link href={"/Booking"}>
       <button className="relative z-10 mt-6 w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-xs uppercase flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300">
         Book Service
         <FiArrowRight />
       </button>
+      </Link>
 
     </div>
   </SwiperSlide>

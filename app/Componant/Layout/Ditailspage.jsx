@@ -1,6 +1,7 @@
 "use client";
-
+import useStore from "./Store/store";
 export default function ProductDetails({ product }) {
+  const {addTocart}=useStore()
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_#60a5fa_0%,_#1e293b_35%,_#020617_75%,_#000000_100%)] text-white">
 
@@ -98,6 +99,13 @@ export default function ProductDetails({ product }) {
             <button className="w-full py-4 px-8 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 transition-all duration-300 rounded-xl text-white text-[15px] font-bold tracking-wide shadow-xl shadow-indigo-900/40 hover:shadow-indigo-700/50 hover:-translate-y-0.5">
               Request Quotation →
             </button>
+<div className="mt-5
+ w-full ">
+            <button onClick={()=>addTocart(product)
+            } className="w-ful  py-4 px-70 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 transition-all duration-300 rounded-xl text-white text-[15px] font-bold tracking-wide shadow-xl shadow-indigo-900/40 hover:shadow-indigo-700/50 hover:-translate-y-0.5">
+             Add To Cart
+            </button>
+            </div>
           </div>
         </div>
       </section>

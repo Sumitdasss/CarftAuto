@@ -1,23 +1,55 @@
 "use client"
 
-import  { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { FiSearch, FiHeart, FiShoppingCart, FiUser, FiMenu, FiX, FiCalendar } from 'react-icons/fi';
 import { FaChevronDown } from 'react-icons/fa6';
 import Link from 'next/link';
-import  useStore  from './Componant/Layout/Store/store';
+import useStore from './Componant/Layout/Store/store';
+import { carPartsAPI } from "../DatA/Data"; // আপনার ডাটা ফাইল থেকে ইমপোর্ট
+
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileMenuOpen2, setIsMobileMenuOpen2] = useState(false);
- // Demo state for items in cart
-const {cart}=useStore()
- const totalItems = cart.length;
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showSearchResults, setShowSearchResults] = useState(false);
+
+  const { cart } = useStore();
+  const totalItems = cart.length;
+
+  // Combine all services for search
+  const allServices = useMemo(() => {
+    return [...carPartsAPI];
+  }, []);
+
+  // Search Filter
+  // ✅ এভাবে করুন
+const searchResults = useMemo(() => {
+  if (!searchQuery.trim()) return [];
+  return allServices
+    .filter(item =>
+      item.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.type?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.partName?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.engineModel?.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+    .slice(0, 8);
+}, [searchQuery, allServices]);
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+    setShowSearchResults(true);
+  };
+
+  const clearSearch = () => {
+    setSearchQuery("");
+    setShowSearchResults(false);
+  };
 
   return (
-     <>
+    <>
       {/* ✅ Sidebar — Header এর সম্পূর্ণ বাইরে */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-[60] flex lg:hidden">
-          
           {/* Sidebar Panel */}
           <div
             className="w-90 overflow-y-auto px-4 py-6 bg-[radial-gradient(circle_at_left,_#0f4c75,_#081c2c,_#000000)]"
@@ -36,7 +68,7 @@ const {cart}=useStore()
               </button>
             </div>
 
-            {/* Nav Links */}
+            {/* Nav Links (আগের মতোই রাখা হয়েছে) */}
             <a href="/" onClick={() => setIsMobileMenuOpen(false)} className="block rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 hover:text-orange-500 transition-colors">
               Home
             </a>
@@ -46,12 +78,12 @@ const {cart}=useStore()
             <a href="/Service?type=bike" onClick={() => setIsMobileMenuOpen(false)} className="block rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 hover:text-orange-500 transition-colors">
               Bike Services
             </a>
-                <Link href={"/Shop"}>
-            <button onClick={() => setIsMobileMenuOpen(false)}  className="block rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 hover:text-orange-500 transition-colors">
-              Shop (Parts)
-            </button>
-  </Link>
-            {/* Gallery Dropdown */}
+            <Link href={"/Shop"}>
+              <button onClick={() => setIsMobileMenuOpen(false)} className="block rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 hover:text-orange-500 transition-colors">
+                Shop (Parts)
+              </button>
+            </Link>
+
             <div className="w-full">
               <button
                 onClick={() => setIsMobileMenuOpen2(!isMobileMenuOpen2)}
@@ -61,15 +93,15 @@ const {cart}=useStore()
                 <FaChevronDown className={`text-[12px] transition-transform duration-300 ${isMobileMenuOpen2 ? "rotate-180 text-orange-500" : ""}`} />
               </button>
               <div className={`pl-4 overflow-hidden border-l border-white/5 transition-all duration-300 ${isMobileMenuOpen2 ? "max-h-40 opacity-100 my-1" : "max-h-0 opacity-0"}`}>
-                <a href="#" className="block py-2 text-sm text-slate-400 hover:text-orange-500 transition-all">Photo Gallery</a>
-                <a href="#" className="block py-2 text-sm text-slate-400 hover:text-orange-500 transition-all">Video Gallery</a>
+                <a href="/Gallary" className="block py-2 text-sm text-slate-400 hover:text-orange-500 transition-all">Photo Gallery</a>
+                <a href="/Video" className="block py-2 text-sm text-slate-400 hover:text-orange-500 transition-all">Video Gallery</a>
               </div>
             </div>
 
-            <a href="#" className="block rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 hover:text-orange-500 transition-colors">
+            <a href="/About" className="block rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 hover:text-orange-500 transition-colors">
               About Us
             </a>
-            <a href="#" className="block rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 hover:text-orange-500 transition-colors">
+            <a href="/Contact" className="block rounded-lg px-4 py-2.5 text-base font-medium text-slate-300 hover:text-orange-500 transition-colors">
               Contact
             </a>
 
@@ -83,28 +115,30 @@ const {cart}=useStore()
                 <FiHeart className="h-4 w-4" />
                 <span>Wishlist</span>
               </button>
-   <Link href={"/Cart"} className='relative'>
-              <button className="flex  w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-orange-500/20 active:scale-[0.98] transition-transform">
-                <FiShoppingCart className="h-4 w-4" />
-                <span>Cart</span>
-
-              </button>
-              <span className="absolute -top-1 z-30 -right-1 flex items-center justify-center min-w-[18px] h-[18px] rounded-full bg-red-600 text-white text-[10px] font-bold">
-                {totalItems}
-              </span>
-              </Link> 
+              <Link href={"/Cart"} className='relative'>
+                <button className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-orange-500/20 active:scale-[0.98] transition-transform">
+                  <FiShoppingCart className="h-4 w-4" />
+                  <span>Cart</span>
+                </button>
+                <span className="absolute -top-1 z-30 -right-1 flex items-center justify-center min-w-[18px] h-[18px] rounded-full bg-red-600 text-white text-[10px] font-bold">
+                  {totalItems}
+                </span>
+              </Link>
+              <Link href={"/Booking"}>
+                <button className="group relative hidden md:flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-orange-600 to-amber-500 text-black font-bold overflow-hidden hover:scale-[1.03] transition">
+                  <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition" />
+                  <FiCalendar className="relative z-10" />
+                  <span className="relative z-10 uppercase tracking-wide">Book Service</span>
+                </button>
+              </Link>
             </div>
           </div>
 
-          {/* Dark Overlay — ক্লিক করলে বন্ধ হবে */}
-          <div
-            className="flex-1 bg-black/60"
-            onClick={() => setIsMobileMenuOpen(false)}
-          />
+          <div className="flex-1 bg-black/60" onClick={() => setIsMobileMenuOpen(false)} />
         </div>
       )}
 
-   
+      {/* Main Header */}
       <div className="sticky top-0 z-50 w-full border-b border-white/10 bg-[radial-gradient(circle_at_top,_#0f4c75,_#081c2c,_#000000)] backdrop-blur-md text-white">
         <div className="mx-auto max-w-360">
           <div className="flex h-20 items-center justify-between gap-4">
@@ -119,17 +153,48 @@ const {cart}=useStore()
               </a>
             </div>
 
-            {/* Search */}
-            <div className="max-w-md relative group">
-              <input
-                type="text"
-                placeholder="Search premium parts (e.g., Brake Pads, V8 Engine)..."
-                className="md:w-60 w-full rounded-full bg-white/5 border border-white/10 py-2.5 pl-11 pr-4 text-sm text-slate-200 placeholder-slate-400 outline-none backdrop-blur-sm transition-all duration-300 focus:border-orange-500/50 focus:bg-white/10 focus:ring-2 focus:ring-orange-500/20"
-              />
-              <FiSearch className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400 group-focus-within:text-orange-500 transition-colors duration-300" />
+            {/* Search Bar with Results */}
+            <div className="max-w-md relative group w-full md:w-auto">
+              <div className="relative">
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                  onFocus={() => setShowSearchResults(true)}
+                  placeholder="Search premium parts (e.g., Brake Pads, V8 Engine)..."
+                  className="md:w-80 w-full rounded-full bg-white/5 border border-white/10 py-2.5 pl-11 pr-4 text-sm text-slate-200 placeholder-slate-400 outline-none backdrop-blur-sm transition-all duration-300 focus:border-orange-500/50 focus:bg-white/10 focus:ring-2 focus:ring-orange-500/20"
+                />
+                <FiSearch className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400 group-focus-within:text-orange-500 transition-colors duration-300" />
+              </div>
+
+              {/* Search Results Dropdown */}
+              {showSearchResults && searchQuery && (
+                <div className="absolute mt-2 w-full md:w-[420px] bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl max-h-[420px] overflow-auto z-50 py-2">
+                {searchResults.length > 0 ? (
+  searchResults.map((item, index) => (
+    <Link
+      key={index}
+      href={`/DitailPage/${item.id}`}
+      className="flex items-center gap-3 px-5 py-3 hover:bg-white/5 transition"
+      onClick={clearSearch}
+    >
+      <img src={item.image} className="w-9 h-9 object-contain rounded" />
+      <div>
+        <p className="text-sm text-slate-200 hover:text-orange-400 line-clamp-1">{item.title}</p>
+        <p className="text-xs text-slate-500">{item.type}</p>
+      </div>
+    </Link>
+  ))
+) : (
+  <p className="px-5 py-6 text-center text-slate-400 text-sm">
+    No results found for "{searchQuery}"
+  </p>
+)}
+                </div>
+              )}
             </div>
 
-            {/* Desktop Nav */}
+            {/* Desktop Nav & Actions (আগের মতোই আছে) */}
             <nav className="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide">
               <a href="/" className="hover:text-red-500 transition-colors duration-200">Home</a>
 
@@ -142,21 +207,23 @@ const {cart}=useStore()
                   <a href="/Service?type=bike" className="block rounded-lg px-4 py-2 text-slate-300 hover:bg-white/5 hover:text-orange-500 transition-all">Motorcycle Repair</a>
                 </div>
               </div>
-    <Link href={"/Shop"}>
-              <button className="text-slate-300 hover:text-red-500 transition-colors duration-200">Shop (Parts)</button>
-  </Link>
+
+              <Link href={"/Shop"}>
+                <button className="text-slate-300 hover:text-red-500 transition-colors duration-200">Shop (Parts)</button>
+              </Link>
+
               <div className="relative group/menu cursor-pointer py-2">
                 <span className="flex hover:text-red-500 items-center gap-1.5 text-slate-300 transition-colors duration-200">
                   Gallery <FaChevronDown className="text-[10px] group-hover/menu:rotate-180 transition-transform duration-300" />
                 </span>
                 <div className="absolute top-6 left-0 mt-1 w-48 rounded-xl border border-white/10 bg-slate-900 p-2 shadow-2xl opacity-0 scale-95 pointer-events-none group-hover/menu:opacity-100 group-hover/menu:scale-100 group-hover/menu:pointer-events-auto transition-all duration-200">
-                  <a href="#" className="block rounded-lg px-4 py-2 text-slate-300 hover:bg-white/5 hover:text-orange-500 transition-all">Photo Gallery</a>
-                  <a href="#" className="block rounded-lg px-4 py-2 text-slate-300 hover:bg-white/5 hover:text-orange-500 transition-all">Video Gallery</a>
+                  <a href="/Gallary" className="block rounded-lg px-4 py-2 text-slate-300 hover:bg-white/5 hover:text-orange-500 transition-all">Photo Gallery</a>
+                  <a href="/Video" className="block rounded-lg px-4 py-2 text-slate-300 hover:bg-white/5 hover:text-orange-500 transition-all">Video Gallery</a>
                 </div>
               </div>
 
-              <a href="#" className="text-slate-300 hover:text-red-500 transition-colors duration-200">About Us</a>
-              <a href="#" className="text-slate-300 hover:text-red-500 transition-colors duration-200">Contact</a>
+              <a href="/About" className="text-slate-300 hover:text-red-500 transition-colors duration-200">About Us</a>
+              <a href="/Contact" className="text-slate-300 hover:text-red-500 transition-colors duration-200">Contact</a>
             </nav>
 
             {/* User Actions */}
@@ -165,19 +232,21 @@ const {cart}=useStore()
                 <FiHeart className="h-5 w-5" />
               </button>
               <Link href={"/Cart"} className='relative'>
-              <button className="relative hidden md:block p-2 text-slate-400 hover:text-white transition-all duration-200 hover:scale-105">
-                <FiShoppingCart className="h-5 w-5" />
-              </button>
-             <span className="absolute hidden  md:block -top-1 z-30 -right-1    min-w-[18px] h-[18px] rounded-full bg-red-600 text-white text-[10px] font-bold">
-               <p className='flex items-center justify-center'>{totalItems}</p> 
-              </span>
-          </Link>
-              <button className="group relative hidden md:flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-orange-600 to-amber-500 text-black font-bold overflow-hidden hover:scale-[1.03] transition">
-                <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition" />
-                <FiCalendar className="relative z-10" />
-                <span className="relative z-10 uppercase tracking-wide">Book Service</span>
-              </button>
-            
+                <button className="relative hidden md:block p-2 text-slate-400 hover:text-white transition-all duration-200 hover:scale-105">
+                  <FiShoppingCart className="h-5 w-5" />
+                </button>
+                <span className="absolute hidden md:block -top-1 z-30 -right-1 min-w-[18px] h-[18px] rounded-full bg-red-600 text-white text-[10px] font-bold">
+                  <p className='flex items-center justify-center'>{totalItems}</p>
+                </span>
+              </Link>
+
+              <Link href={"/Booking"}>
+                <button className="group relative hidden md:flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-orange-600 to-amber-500 text-black font-bold overflow-hidden hover:scale-[1.03] transition">
+                  <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition" />
+                  <FiCalendar className="relative z-10" />
+                  <span className="relative z-10 uppercase tracking-wide">Book Service</span>
+                </button>
+              </Link>
 
               {/* Mobile Hamburger */}
               <button
@@ -187,7 +256,6 @@ const {cart}=useStore()
                 <FiMenu className="h-6 w-6" />
               </button>
             </div>
-
           </div>
         </div>
       </div>

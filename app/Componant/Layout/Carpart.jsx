@@ -5,13 +5,14 @@ import { FiShoppingCart, FiHeart, FiShuffle, FiEye } from 'react-icons/fi';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { carPartsAPI } from "../../../DatA/Data";
-
+import useStore from './Store/store';
 // Swiper Styles Import (Next.js-এ এগুলো ইমপোর্ট করা জরুরি)
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Link from 'next/link';
 
 const ProductSlider = () => {
+  const {addTocart}=useStore()
   return (
     <div className="bg-[radial-gradient(circle_at_top,_#0f2d46,_#07111F_45%,_#020617_100%)]  py-12 flex items-center justify-center">
       
@@ -99,8 +100,29 @@ const ProductSlider = () => {
 >
   View
 </Link>
-      <button className="py-3 flex items-center justify-center gap-1.5 rounded-xl text-slate-950 font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-teal-500/10"
-        style={{ background: "linear-gradient(135deg, #0d9488, #0891b2)" }}
+      <button  onClick={() => {
+    
+    addTocart(item);
+  }} className="relative z-[100]
+    py-3 
+    flex 
+    items-center 
+    bg-gradient-to-br 
+    from-teal-600 
+    to-cyan-600 
+    justify-center 
+    gap-1.5 
+    rounded-xl 
+    text-slate-950 
+    font-black 
+    text-xs 
+    uppercase 
+    tracking-wider 
+    transition-all 
+    duration-300 
+    shadow-lg 
+    shadow-teal-500/10"
+       
       >
         <FiShoppingCart className="text-sm stroke-[3]" /> Add Cart
       </button>

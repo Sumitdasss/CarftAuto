@@ -1,10 +1,11 @@
 import React from "react";
 import { FiCalendar, FiCpu, FiPhoneCall } from "react-icons/fi";
 import   SplashCursor from './Mousanimation'
+import Link from "next/link";
 const HeroBanner = () => {
   return (
  <section className="relative min-h-screen lg:h-screen w-full overflow-hidden bg-[#07111F] text-white">
-import SplashCursor from './SplashCursor'
+
 
 <SplashCursor
   DENSITY_DISSIPATION={3.5}
@@ -12,13 +13,13 @@ import SplashCursor from './SplashCursor'
   PRESSURE={0.1}
   CURL={3}
   SPLAT_RADIUS={0.2}
-  SPLAT_FORCE={7000}
+  SPLAT_FORCE={5000}
   COLOR_UPDATE_SPEED={10}
   SHADING
   RAINBOW_MODE={false}
   COLOR="#082F49"
 />
-  {/* 🎥 Background Video */}
+ 
   <div className="absolute inset-0 z-0">
     <video
       autoPlay
@@ -72,7 +73,7 @@ import SplashCursor from './SplashCursor'
 
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 mt-8">
-
+<Link href={"/Booking"}>
         <button className="group relative flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 text-white font-bold overflow-hidden hover:scale-105 transition-all duration-300">
           <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition" />
           <FiCalendar className="relative z-10" />
@@ -80,14 +81,15 @@ import SplashCursor from './SplashCursor'
             Book Service
           </span>
         </button>
-
+</Link>
+<Link href={"/Shop"}>
         <button className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-cyan-500/20 bg-cyan-500/5 backdrop-blur-md hover:bg-cyan-500/10 hover:border-cyan-400/40 transition-all duration-300">
           <FiCpu className="text-cyan-400" />
           <span className="uppercase text-sm">
             Shop Parts
           </span>
         </button>
-
+</Link>
       </div>
 
       {/* Emergency */}
