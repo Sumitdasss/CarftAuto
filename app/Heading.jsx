@@ -13,7 +13,7 @@ const Header = () => {
   const [isMobileMenuOpen2, setIsMobileMenuOpen2] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [showSearchResults, setShowSearchResults] = useState(false);
-const [showNavbar, setShowNavbar] = useState(false);
+
   const { cart } = useStore();
   const totalItems = cart.length;
 
@@ -22,29 +22,7 @@ const [showNavbar, setShowNavbar] = useState(false);
     return [...carPartsAPI];
   }, []);
 
-  useEffect(() => {
 
-  const handleScroll = () => {
-
-    if(window.scrollY > window.innerHeight){
-      setShowNavbar(true);
-    } 
-    else {
-      setShowNavbar(false);
-    }
-
-  };
-
-
-  window.addEventListener("scroll", handleScroll);
-
-
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-  };
-
-
-}, []);
   // Search Filter
   // ✅ এভাবে করুন
 const searchResults = useMemo(() => {
@@ -71,23 +49,7 @@ const searchResults = useMemo(() => {
 
   return (
     <div
- className={`
-    z-50
-    w-full
-    border-b
-    border-white/10
-    bg-[radial-gradient(circle_at_top,_#0f4c75,_#081c2c,_#000000)]
-    backdrop-blur-md
-    text-white
-    transition-all
-    duration-500
-
-    ${
-      showNavbar
-        ? "fixed top-0 left-0 translate-y-0 shadow-xl animate-slideDown"
-        : "relative"
-    }
-  `}
+ 
 >
       {/* ✅ Sidebar — Header এর সম্পূর্ণ বাইরে */}
       {isMobileMenuOpen && (
@@ -181,7 +143,7 @@ const searchResults = useMemo(() => {
       )}
 
       {/* Main Header */}
-      <div className="sticky top-0 z-50 w-full border-b border-white/10 bg-[radial-gradient(circle_at_top,_#0f4c75,_#081c2c,_#000000)] backdrop-blur-md text-white">
+      <div className="fixed top-0 z-50 w-full border-b border-white/10 bg-[radial-gradient(circle_at_top,_#0f4c75,_#081c2c,_#000000)] backdrop-blur-md text-white">
         <div className="mx-auto max-w-360">
           <div className="flex h-20 items-center justify-between gap-4">
 
