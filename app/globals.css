@@ -131,3 +131,20 @@ html,body{
     @apply font-sans;
   }
 }
+
+@keyframes slideDown {
+
+from{
+  transform: translateY(-100%);
+}
+
+to{
+  transform: translateY(0);
+}
+
+}
+
+
+.animate-slideDown{
+ animation: slideDown .5s ease forwards;
+}

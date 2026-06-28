@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { FiSearch, FiHeart, FiShoppingCart, FiUser, FiMenu, FiX, FiCalendar } from 'react-icons/fi';
 import { FaChevronDown } from 'react-icons/fa6';
 import Link from 'next/link';
@@ -8,11 +8,12 @@ import useStore from './Componant/Layout/Store/store';
 import { carPartsAPI } from "../DatA/Data"; // আপনার ডাটা ফাইল থেকে ইমপোর্ট
 
 const Header = () => {
+  
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileMenuOpen2, setIsMobileMenuOpen2] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [showSearchResults, setShowSearchResults] = useState(false);
-
+const [showNavbar, setShowNavbar] = useState(false);
   const { cart } = useStore();
   const totalItems = cart.length;
 
@@ -21,6 +22,29 @@ const Header = () => {
     return [...carPartsAPI];
   }, []);
 
+  useEffect(() => {
+
+  const handleScroll = () => {
+
+    if(window.scrollY > window.innerHeight){
+      setShowNavbar(true);
+    } 
+    else {
+      setShowNavbar(false);
+    }
+
+  };
+
+
+  window.addEventListener("scroll", handleScroll);
+
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+
+
+}, []);
   // Search Filter
   // ✅ এভাবে করুন
 const searchResults = useMemo(() => {
@@ -46,7 +70,25 @@ const searchResults = useMemo(() => {
   };
 
   return (
-    <>
+    <div
+ className={`
+    z-50
+    w-full
+    border-b
+    border-white/10
+    bg-[radial-gradient(circle_at_top,_#0f4c75,_#081c2c,_#000000)]
+    backdrop-blur-md
+    text-white
+    transition-all
+    duration-500
+
+    ${
+      showNavbar
+        ? "fixed top-0 left-0 translate-y-0 shadow-xl animate-slideDown"
+        : "relative"
+    }
+  `}
+>
       {/* ✅ Sidebar — Header এর সম্পূর্ণ বাইরে */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-[60] flex lg:hidden">
@@ -259,7 +301,7 @@ const searchResults = useMemo(() => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
